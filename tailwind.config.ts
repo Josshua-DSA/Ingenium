@@ -9,12 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lavender: { DEFAULT: '#f4effa', dark: '#e9dfeb' },
-        fio: { dark: '#2b0938', purple: '#7c2596', cyan: '#00f2fe', green: '#22c55e' },
+        arctic: {
+          abyss: '#0A0F1E',
+          blue: '#2E6DAD',
+          mist: '#EAF4FB',
+        },
+        ocean: {
+          deep: '#0D1B2E',
+        },
+        navy: {
+          dark: '#112240',
+          mid: '#1A3354',
+        },
+        frost: {
+          mid: '#5BA4CF',
+          light: '#A8D4F0',
+          pale: '#D4EBF9',
+          cyan: '#00F2FE',
+        },
+        status: {
+          emerald: '#34D399',
+        },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
-        body: ['var(--font-body)', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
     },

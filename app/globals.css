@@ -2,15 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Arctic Ocean Blue System (DESIGN.md Spec) ─────────── */
 :root {
-  --bg-lavender: #f4effa;
-  --bg-canvas: #f8f5fc;
-  --text-dark: #260b3c;
-  --text-muted: #5e4c70;
-  --accent-purple: #2b0938;
-  --accent-violet: #7c2596;
-  --accent-cyan: #00f2fe;
-  --accent-green: #22c55e;
+  /* Arctic Dark Tones */
+  --arctic-abyss:   #0A0F1E;   /* darkest bg — hero, layout */
+  --ocean-deep:     #0D1B2E;   /* section bg dark primary */
+  --navy-dark:      #112240;   /* section bg dark secondary */
+  --navy-mid:       #1A3354;   /* borders on dark, elevated surfaces */
+
+  /* Arctic Blue Accents */
+  --arctic-blue:    #2E6DAD;   /* primary accent — buttons, links */
+  --frost-mid:      #5BA4CF;   /* secondary accent — hover, badge */
+  --frost-light:    #A8D4F0;   /* subtle highlight, focus states */
+  --frost-cyan:     #00F2FE;   /* glowing highlights */
+  --status-emerald: #34D399;   /* active status */
+
+  /* Text Colors */
+  --text-primary:   #EAF4FB;
+  --text-sub:       #7B9AB5;
+  --text-muted:     #3D5770;
+
+  /* Glassmorphism Specs (Apple/macOS material) */
+  --glass-bg:       rgba(13, 27, 46, 0.65);
+  --glass-border-t: rgba(91, 164, 207, 0.30);
+  --glass-border-b: rgba(26, 51, 84, 0.50);
 }
 
 html {
@@ -18,8 +33,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-lavender);
-  color: var(--text-dark);
+  background-color: var(--arctic-abyss);
+  color: var(--text-primary);
   font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -27,66 +42,85 @@ body {
 }
 
 ::selection {
-  background: var(--accent-purple);
-  color: white;
+  background: var(--arctic-blue);
+  color: #ffffff;
 }
 
-/* Figma Selection Box Style */
+/* Figma Selection Box Style (Arctic Theme) */
 .figma-selection-box {
-  border: 1.5px dashed rgba(124, 37, 150, 0.4);
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 20px 50px rgba(43, 9, 56, 0.08);
+  border: 1.5px dashed rgba(91, 164, 207, 0.45);
+  background: rgba(13, 27, 46, 0.65);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 
+    0 30px 60px -15px rgba(0, 0, 0, 0.8),
+    inset 0px 1px 0px 0px rgba(168, 212, 240, 0.3);
 }
 
 .figma-handle {
   width: 9px;
   height: 9px;
   background: #ffffff;
-  border: 1.5px solid #7c2596;
+  border: 1.5px solid #5BA4CF;
   border-radius: 2px;
   position: absolute;
 }
 
-/* Lanyard 3D Drop Shadow */
-.lanyard-card-shadow {
-  box-shadow: 
-    0 25px 50px -12px rgba(43, 9, 56, 0.25),
-    0 0 15px rgba(124, 37, 150, 0.15);
+/* Glass Cards Apple Style */
+.glass-card-arctic {
+  background: rgba(13, 27, 46, 0.55);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  border: 1px solid rgba(26, 51, 84, 0.6);
+  border-top: 1px solid rgba(91, 164, 207, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Marquee Infinite Animation */
+.glass-card-arctic:hover {
+  background: rgba(26, 51, 84, 0.65);
+  border-color: rgba(91, 164, 207, 0.5);
+  border-top-color: rgba(168, 212, 240, 0.6);
+  box-shadow: 
+    0 30px 60px -20px rgba(0, 0, 0, 0.9),
+    0 0 30px 4px rgba(91, 164, 207, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Navbar Adaptive Glass */
+.glass-nav-arctic {
+  background: rgba(10, 15, 30, 0.80);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(26, 51, 84, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Skill Pill Tag */
+.skill-pill-arctic {
+  background: rgba(17, 34, 64, 0.70);
+  border: 1px solid rgba(91, 164, 207, 0.20);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.skill-pill-arctic:hover {
+  background: rgba(46, 109, 173, 0.35);
+  border-color: rgba(91, 164, 207, 0.50);
+  color: #ffffff;
+}
+
+/* Marquee Animations */
 @keyframes marquee-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 .animate-marquee-slow {
-  animation: marquee-left 40s linear infinite;
+  animation: marquee-left 35s linear infinite;
 }
 
 .animate-marquee-slow:hover {
   animation-play-state: paused;
-}
-
-/* Navbar Fio Glass Style */
-.fio-nav-glass {
-  background: rgba(17, 14, 27, 0.92);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Fio Pill Tag Style */
-.fio-pill-tag {
-  background: rgba(43, 9, 56, 0.06);
-  border: 1px solid rgba(43, 9, 56, 0.12);
-  color: #2b0938;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.fio-pill-tag:hover {
-  background: #2b0938;
-  color: #ffffff;
 }
