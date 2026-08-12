@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: #060D18;
+  --color-bg-surface: #0C1A2E;
+  --color-bg-elevated: #112240;
+
+  --color-blue-dim: #1E3A5F;
+  --color-blue-mid: #2E6DAD;
+  --color-blue-bright: #4FA3E0;
+  --color-blue-glow: #7EC8F5;
+
+  --color-text-primary: #E8F1FB;
+  --color-text-secondary: #9BB5D4;
+  --color-text-muted: #4A6580;
+
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+
+  --color-border-default: #1E3A5F;
+  --color-border-subtle: #112240;
+
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+:root {
+  --glass-light: rgba(14, 30, 54, 0.55);
+  --glass-mid: rgba(10, 22, 40, 0.70);
+  --glass-heavy: rgba(6, 13, 24, 0.85);
+
+  --glass-border-top: rgba(78, 163, 224, 0.18);
+  --glass-border-rest: rgba(30, 58, 95, 0.35);
+
+  --blur-glass: 20px;
+  --blur-nav: 28px;
+  --blur-heavy: 40px;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
