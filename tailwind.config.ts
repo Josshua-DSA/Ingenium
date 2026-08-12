@@ -9,14 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: { DEFAULT: '#0f0a1e', surface: '#1a1430', elevated: '#241d3a' },
-        violet: { DEFAULT: '#7c3aed', light: '#a78bfa', dim: '#4c1d95' },
-        cyan: { DEFAULT: '#22d3ee', light: '#67e8f9' },
-        emerald: { DEFAULT: '#22c55e' },
+        lavender: { DEFAULT: '#f4effa', dark: '#e9dfeb' },
+        fio: { dark: '#2b0938', purple: '#7c2596', cyan: '#00f2fe', green: '#22c55e' },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
+        body: ['var(--font-body)', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
     },

@@ -1,45 +1,51 @@
 import Link from 'next/link'
+import { Home, User, Sparkles, Code, FolderGit2, Mail } from 'lucide-react'
 
 const navItems = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#home', label: 'Home', icon: Home },
+  { href: '#about', label: 'About', icon: User },
+  { href: '#skills', label: 'Skills', icon: Code },
+  { href: '#projects', label: 'Projects', icon: FolderGit2 },
+  { href: '#contact', label: 'Contact', icon: Mail },
 ]
 
 export function HeaderNav() {
   return (
     <header className="sticky top-4 z-50 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-      <div className="glass-nav rounded-full px-6 h-14 flex items-center justify-between shadow-2xl">
+      <div className="fio-nav-glass rounded-full px-6 h-14 flex items-center justify-between shadow-2xl text-white">
+        
         {/* Brand */}
         <Link 
           href="/" 
-          className="font-display font-extrabold text-lg tracking-tight text-white hover:text-violet-light transition-colors"
+          className="font-display font-black text-lg tracking-tight text-white hover:text-fio-cyan transition-colors flex items-center space-x-1"
         >
-          JF<span className="text-violet">.</span>
+          <span>JOSHUA</span>
+          <span className="text-fio-cyan font-black">.</span>
         </Link>
 
-        {/* Nav Links */}
-        <nav className="hidden sm:flex items-center space-x-6">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="font-mono text-[11px] uppercase tracking-widest text-slate-400 hover:text-violet-light transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+        {/* Navigation Items */}
+        <nav className="hidden sm:flex items-center space-x-5">
+          {navItems.map((item) => {
+            const Icon = item.icon
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                className="flex items-center space-x-1.5 font-mono text-xs text-slate-300 hover:text-fio-cyan transition-colors"
+              >
+                <Icon className="w-3.5 h-3.5" />
+                <span>{item.label}</span>
+              </a>
+            )
+          })}
         </nav>
 
-        {/* Status Badge */}
-        <div className="flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
+        {/* Right Available Status Pill */}
+        <div className="flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/40 px-3.5 py-1 rounded-full text-xs font-mono text-emerald-400">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[11px] font-mono font-semibold tracking-wider uppercase text-emerald-400">
-            AVAILABLE
-          </span>
+          <span className="font-semibold tracking-wider uppercase">AVAILABLE</span>
         </div>
+
       </div>
     </header>
   )
