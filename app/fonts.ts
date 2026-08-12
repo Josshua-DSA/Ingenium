@@ -1,22 +1,22 @@
-import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google'
+import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
 
-export const spaceGrotesk = Space_Grotesk({
+export const syne = Syne({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['600', '700'],
+  weight: ['700', '800'],
   display: 'swap',
 })
 
-export const inter = Inter({
+export const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['400', '500'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
 export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   display: 'swap',
 })

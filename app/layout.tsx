@@ -1,12 +1,11 @@
 import './globals.css'
-import { spaceGrotesk, inter, jetbrainsMono } from './fonts'
-import { Navbar } from '@/components/layout/Navbar'
+import { syne, jakarta, jetbrainsMono } from './fonts'
 import { Footer } from '@/components/layout/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata = {
-  title: 'Quant Developer & Data Scientist Portfolio',
+  title: 'Joshua — Quant Developer & Data Scientist Portfolio',
   description: 'Building systematic equity research engines, ML pipelines, and technical tooling.',
 }
 
@@ -18,13 +17,10 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${syne.variable} ${jakarta.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
-      <body className="bg-[var(--color-bg-base)] text-[var(--color-text-primary)] font-body antialiased flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
+      <body className="bg-bg-canvas text-slate-100 font-body antialiased flex flex-col min-h-screen selection:bg-sky-500 selection:text-white">
+        {children}
         <Footer />
         <Analytics />
         <SpeedInsights />
