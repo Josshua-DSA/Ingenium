@@ -1,62 +1,65 @@
 export function SkillsSection() {
+  const languages = ['Python', 'SQL', 'TypeScript', 'Bash', 'R']
+  const mlSkills = ['PyTorch', 'LightGBM', 'XGBoost', 'scikit-learn', 'Pandas', 'NumPy', 'Triple Barrier', 'Walk-Forward']
+  const dataSystems = ['SQLite3', 'PostgreSQL', 'Docker', 'Git', 'Linux Mint', 'Typer', 'Rich', 'Next.js 15']
+
   return (
-    <section id="skills" className="py-20 border-b border-white/5 relative z-10">
+    <section id="skills" className="py-20 relative z-10">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <span className="font-mono text-xs uppercase tracking-widest text-accent-sky block mb-2 font-semibold">
-            TECHNICAL ECOSYSTEM
+        <div className="mb-10">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-violet-light block mb-2 font-semibold">
+            TECH SKILLS
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
-            Tech Skills & Tools.
+            Tech Skills.
           </h2>
-          <p className="text-slate-400 text-lg mt-2">
-            Tools, frameworks, and languages I utilize to ingest, model, validate, and deploy quantitative software.
+          <p className="text-slate-400 text-lg mt-2 font-body">
+            Tools, languages, and ecosystems that I use to gather, model, and visualize data.
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Languages */}
-          <div className="glass-card-fio p-6 rounded-3xl">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-accent-sky mb-4 font-bold">
-              ● Languages
+        {/* Fio-style Pill Container */}
+        <div className="space-y-6">
+          <div className="glass-card p-6 rounded-3xl">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-violet-light mb-3 font-semibold">
+              Languages
             </h3>
-            <div className="flex flex-wrap gap-2 font-mono text-xs">
-              {['Python', 'SQL', 'TypeScript', 'Bash', 'R'].map((s) => (
-                <span key={s} className="bg-slate-900/80 border border-white/10 text-slate-200 px-3 py-1.5 rounded-xl">
+            <div className="flex flex-wrap gap-2.5">
+              {languages.map((s) => (
+                <span key={s} className="skill-pill px-4 py-2 rounded-full text-xs font-mono text-slate-200">
                   {s}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* ML & Quant */}
-          <div className="glass-card-fio p-6 rounded-3xl">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-emerald-400 mb-4 font-bold">
-              ● Quant & Machine Learning
+          <div className="glass-card p-6 rounded-3xl">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-emerald mb-3 font-semibold">
+              Quant & Machine Learning
             </h3>
-            <div className="flex flex-wrap gap-2 font-mono text-xs">
-              {['PyTorch', 'LightGBM', 'XGBoost', 'scikit-learn', 'Pandas', 'NumPy', 'Triple Barrier', 'Walk-Forward'].map((s) => (
-                <span key={s} className="bg-slate-900/80 border border-white/10 text-slate-200 px-3 py-1.5 rounded-xl">
+            <div className="flex flex-wrap gap-2.5">
+              {mlSkills.map((s) => (
+                <span key={s} className="skill-pill px-4 py-2 rounded-full text-xs font-mono text-slate-200">
                   {s}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Data & Systems */}
-          <div className="glass-card-fio p-6 rounded-3xl">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-accent-cyan mb-4 font-bold">
-              ● Data & Systems
+          <div className="glass-card p-6 rounded-3xl">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-cyan mb-3 font-semibold">
+              Data & Systems Infrastructure
             </h3>
-            <div className="flex flex-wrap gap-2 font-mono text-xs">
-              {['SQLite3', 'PostgreSQL', 'Docker', 'Git', 'Linux Mint', 'Typer', 'Rich', 'Next.js 15'].map((s) => (
-                <span key={s} className="bg-slate-900/80 border border-white/10 text-slate-200 px-3 py-1.5 rounded-xl">
+            <div className="flex flex-wrap gap-2.5">
+              {dataSystems.map((s) => (
+                <span key={s} className="skill-pill px-4 py-2 rounded-full text-xs font-mono text-slate-200">
                   {s}
                 </span>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )

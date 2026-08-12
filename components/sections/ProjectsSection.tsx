@@ -8,60 +8,68 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="py-20 border-b border-white/5 relative z-10">
+    <section id="projects" className="py-20 relative z-10">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-10 flex items-end justify-between">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-accent-sky block mb-2 font-semibold flex items-center space-x-1.5">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-violet-light block mb-2 font-semibold flex items-center space-x-1.5">
               <Sparkles className="w-3.5 h-3.5 inline" />
-              <span>CASE STUDIES</span>
+              <span>PROJECTS</span>
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
-              Featured Engineering.
+              My Projects & Case Studies
             </h2>
+            <p className="text-slate-400 text-lg mt-2 font-body">
+              Every case study below reflects actual work — the problem, the approach, and what was learned.
+            </p>
           </div>
         </div>
 
-        <div className="grid gap-10">
+        <div className="grid gap-8">
           {projects.map((project) => (
             <div
               key={project.slug}
-              className="glass-card-fio p-8 lg:p-12 relative overflow-hidden group"
+              className="glass-card p-7 lg:p-10 rounded-3xl relative overflow-hidden group"
             >
-              <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-6">
+              {/* Header Meta */}
+              <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-5">
                 <div className="flex items-center space-x-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400 animate-pulse" />
-                  <span className="uppercase tracking-wider text-emerald-400 font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald shadow-sm shadow-emerald animate-pulse" />
+                  <span className="uppercase tracking-wider text-emerald font-semibold">
                     {project.status}
                   </span>
                 </div>
-                <span className="text-slate-400 font-mono">{project.year}</span>
+                <span>{project.year}</span>
               </div>
 
-              <h3 className="font-display text-3xl sm:text-4xl font-bold text-white group-hover:text-sky-300 transition-colors mb-4">
+              {/* Title */}
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-violet-light transition-colors mb-3">
                 <Link href={`/projects/${project.slug}`}>
                   {project.title}
                 </Link>
               </h3>
 
-              <p className="text-slate-300 mb-8 text-base sm:text-xl font-body leading-relaxed max-w-3xl">
+              {/* Tagline */}
+              <p className="text-slate-300 mb-6 text-sm sm:text-base font-body leading-relaxed max-w-3xl">
                 {project.tagline}
               </p>
 
-              <div className="flex flex-wrap gap-2.5 mb-10">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-8">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-slate-950/70 border border-white/10 text-slate-300 font-mono text-xs px-3.5 py-1 rounded-full shadow-inner"
+                    className="skill-pill text-[11px] font-mono px-3 py-1 rounded-full text-slate-300"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
+              {/* Link */}
               <Link
                 href={`/projects/${project.slug}`}
-                className="inline-flex items-center space-x-2 text-sm font-mono font-medium text-accent-sky hover:text-sky-300 transition-colors group/link"
+                className="inline-flex items-center space-x-2 text-sm font-mono font-medium text-violet-light hover:text-white transition-colors group/link"
               >
                 <span>Read full technical breakdown</span>
                 <span className="transition-transform group-hover/link:translate-x-1">→</span>

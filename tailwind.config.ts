@@ -9,31 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: {
-          canvas: '#040711',
-          surface: '#0a101f',
-          card: 'rgba(15, 23, 42, 0.55)',
-        },
-        accent: {
-          sky: '#38bdf8',
-          cyan: '#22d3ee',
-          blue: '#2563eb',
-          purple: '#a855f7',
-        },
+        dark: { DEFAULT: '#0f0a1e', surface: '#1a1430', elevated: '#241d3a' },
+        violet: { DEFAULT: '#7c3aed', light: '#a78bfa', dim: '#4c1d95' },
+        cyan: { DEFAULT: '#22d3ee', light: '#67e8f9' },
+        emerald: { DEFAULT: '#22c55e' },
       },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
-      },
-      animation: {
-        'marquee': 'marquee 30s linear infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
       },
     },
   },

@@ -2,15 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Base ──────────────────────────────────── */
 :root {
-  --bg-canvas: #040711;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --bg-dark: #0f0a1e;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --text-primary: #f1f0f5;
+  --text-secondary: #a8a3b8;
+  --text-muted: #6b6580;
+  --accent-violet: #7c3aed;
+  --accent-cyan: #22d3ee;
+  --accent-emerald: #22c55e;
+  --border-glass: rgba(255, 255, 255, 0.10);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg-canvas);
+  background-color: var(--bg-dark);
   color: var(--text-primary);
   font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
@@ -18,33 +28,78 @@ body {
   overflow-x: hidden;
 }
 
-/* Glassmorphism Specs (fioctriyanti style) */
-.glass-pill-nav {
-  background: rgba(10, 16, 31, 0.70);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+::selection {
+  background: var(--accent-violet);
+  color: white;
 }
 
-.glass-card-fio {
-  background: rgba(15, 23, 42, 0.50);
-  backdrop-filter: blur(28px) saturate(210%);
-  -webkit-backdrop-filter: blur(28px) saturate(210%);
-  border-radius: 24px;
+/* ── Marquee ──────────────────────────────── */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-left {
+  animation: marquee-left 35s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
+
+/* ── Glassmorphism ────────────────────────── */
+.glass-nav {
+  background: rgba(15, 10, 30, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 30px 60px -15px rgba(0, 0, 0, 0.8),
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-card-fio:hover {
-  background: rgba(30, 41, 59, 0.60);
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 
-    0 40px 80px -20px rgba(0, 0, 0, 0.9),
-    0 0 35px 5px rgba(56, 189, 248, 0.15),
-    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4);
-  transform: translateY(-3px);
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 0 30px 4px rgba(124, 58, 237, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Floating chip badges ─────────────────── */
+.float-chip {
+  background: rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.float-chip:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* ── Skill pill ───────────────────────────── */
+.skill-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: all 0.2s ease;
+}
+.skill-pill:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+/* ── Radial glow backgrounds ──────────────── */
+.glow-violet {
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+}
+.glow-cyan {
+  background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.12) 0%, transparent 70%);
 }
