@@ -25,5 +25,5 @@ yarn-error.log*
 .DS_Store
 *.pem
 
-# Agents
+# governance & context docs
 context/
