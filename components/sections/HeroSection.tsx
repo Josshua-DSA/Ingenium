@@ -1,4 +1,5 @@
 import { BarChart3, Database, Code, Cpu } from 'lucide-react'
+import { OrbitalSpotlight } from '@/components/ui/OrbitalSpotlight'
 
 export function HeroSection() {
   return (
@@ -6,8 +7,11 @@ export function HeroSection() {
       id="home" 
       className="relative w-full min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-12 bg-slate-950 text-white"
     >
-      {/* 1. Subtle Architectural Grid Coordinates Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.12]">
+      {/* 1. Physical 4-Corner Traveling Orbital Spotlight */}
+      <OrbitalSpotlight />
+
+      {/* 2. Subtle Architectural Grid Coordinates Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
@@ -17,9 +21,6 @@ export function HeroSection() {
           <rect width="100%" height="100%" fill="url(#hero-grid)" />
         </svg>
       </div>
-
-      {/* 2. Traveling Orbital Background Spotlight (Merambat mengorbit 4 sudut layar: Top -> Right -> Bottom -> Left -> Top) */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_70%_70%_at_var(--tw-gradient-stops),rgba(46,109,173,0.45),rgba(0,229,255,0.15),transparent_70%)] animate-spotlight-orbit" />
 
       {/* 3. Floating Ambient Micro Particles */}
       <div className="absolute inset-0 z-0 pointer-events-none">

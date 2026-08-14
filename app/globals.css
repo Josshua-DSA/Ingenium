@@ -125,18 +125,37 @@ body {
   animation-play-state: paused;
 }
 
-/* Traveling Orbital Background Spotlight (Orbit 4 Sudut Layar: Top -> Right -> Bottom -> Left -> Top) */
-@keyframes spotlightOrbit {
-  0%   { background-position: 50% -20%; }
-  25%  { background-position: 120% 50%; }
-  50%  { background-position: 50% 120%; }
-  75%  { background-position: -20% 50%; }
-  100% { background-position: 50% -20%; }
+/* Physical Traveling Orbital Light Beam (Orbiting 4 Corners: Top -> Right -> Bottom -> Left -> Top) */
+@keyframes orbitFourCorners {
+  0% {
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  75% {
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.animate-spotlight-orbit {
-  background-size: 140% 140%;
-  animation: spotlightOrbit 16s ease-in-out infinite;
+.animate-orbital-glow {
+  animation: orbitFourCorners 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Cinematic Entry Animation (Blur-in to Sharp) */
