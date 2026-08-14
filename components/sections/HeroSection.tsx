@@ -10,7 +10,7 @@ export function HeroSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
-        {/* Floating Skill Chips (Fio exact placement, Arctic theme) */}
+        {/* Floating Skill Chips */}
         <div className="hidden md:block relative h-0 z-20">
           {/* Top Right Chip */}
           <div className="absolute top-[-30px] right-20 bg-ocean-deep/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl border border-frost-mid/30 flex items-center space-x-3 transform rotate-2 hover:rotate-0 transition-transform">
@@ -18,8 +18,8 @@ export function HeroSection() {
               <BarChart3 className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-[9px] font-mono uppercase font-bold text-text-sub">QUANT RESEARCH</div>
-              <div className="text-xs font-mono font-extrabold text-frost-cyan">IDX Signals ↗</div>
+              <div className="text-[9px] font-mono uppercase font-bold text-text-sub">DATA ANALYTICS</div>
+              <div className="text-xs font-mono font-extrabold text-frost-cyan">Insights & ML ↗</div>
             </div>
           </div>
 
@@ -32,7 +32,7 @@ export function HeroSection() {
           {/* Mid Right Chip */}
           <div className="absolute top-44 right-12 bg-ocean-deep/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl border border-frost-mid/30 flex items-center space-x-2.5 transform -rotate-2 hover:rotate-0 transition-transform">
             <Cpu className="w-4 h-4 text-frost-mid" />
-            <span className="font-mono text-xs font-bold text-text-primary">Walk-Forward CV</span>
+            <span className="font-mono text-xs font-bold text-text-primary">ML Pipelines</span>
           </div>
 
           {/* Left Mid Chip */}
@@ -41,8 +41,8 @@ export function HeroSection() {
               <Database className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-[9px] font-mono uppercase text-text-sub font-semibold">ENGINEERING</div>
-              <div className="text-xs font-mono font-bold text-text-primary">SQLite & Big Data</div>
+              <div className="text-[9px] font-mono uppercase text-text-sub font-semibold">DATA ENGINEERING</div>
+              <div className="text-xs font-mono font-bold text-text-primary">ETL & SQL Pipelines</div>
             </div>
           </div>
 
@@ -86,16 +86,12 @@ export function HeroSection() {
                 MY PORTFOLIO
               </h1>
 
-              {/* Floating Role Menu Card (Fio Right Side Menu) */}
+              {/* Floating Role Menu Card */}
               <div className="hidden sm:block absolute -right-6 top-1/2 -translate-y-1/2 bg-ocean-deep/95 backdrop-blur-xl p-4 rounded-2xl shadow-2xl border border-frost-mid/30 text-left min-w-[200px] z-20 transform rotate-2">
                 <div className="text-[10px] font-mono uppercase text-frost-light font-bold mb-2">ROLES & FOCUS</div>
                 <div className="space-y-1.5 text-xs font-mono text-text-primary font-semibold">
                   <div className="flex items-center space-x-2 text-frost-cyan bg-navy-mid/60 px-2 py-1 rounded-lg">
                     <span className="w-1.5 h-1.5 rounded-full bg-frost-cyan" />
-                    <span>Quant Developer</span>
-                  </div>
-                  <div className="flex items-center space-x-2 px-2 py-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
                     <span>Data Scientist</span>
                   </div>
                   <div className="flex items-center space-x-2 px-2 py-1">
@@ -104,7 +100,15 @@ export function HeroSection() {
                   </div>
                   <div className="flex items-center space-x-2 px-2 py-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
-                    <span>IDX Researcher</span>
+                    <span>Data Engineer</span>
+                  </div>
+                  <div className="flex items-center space-x-2 px-2 py-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                    <span>Data Analyst</span>
+                  </div>
+                  <div className="flex items-center space-x-2 px-2 py-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
+                    <span>AI Engineer</span>
                   </div>
                 </div>
               </div>
@@ -115,7 +119,7 @@ export function HeroSection() {
             <div className="mt-8 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 bg-navy-dark/90 border border-frost-mid/30 px-5 py-2 rounded-full shadow-md text-xs font-mono text-text-primary">
                 <span>Presented by</span>
-                <strong className="font-bold text-frost-cyan">Joshua — Quantitative Developer & Data Scientist</strong>
+                <strong className="font-bold text-frost-cyan">Joshua — Data Scientist & ML Engineer</strong>
               </div>
             </div>
 

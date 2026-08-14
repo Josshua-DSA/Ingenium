@@ -6,8 +6,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata = {
-  title: 'Joshua — Quant Developer & Data Scientist Portfolio',
-  description: 'Personal branding portfolio showcasing systematic equity research engines, ML pipelines, and technical tooling.',
+  title: 'Joshua — Data Scientist & ML Engineer Portfolio',
+  description: 'Personal branding portfolio showcasing data science, machine learning models, and data pipelines.',
 }
 
 export default function RootLayout({

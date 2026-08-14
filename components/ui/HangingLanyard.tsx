@@ -55,7 +55,7 @@ export function HangingLanyard() {
               {photoError && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-2 text-center bg-purple-950 text-white">
                   <span className="font-mono text-[10px] font-bold text-fio-cyan">JOSHUA</span>
-                  <span className="text-[8px] font-mono text-purple-300 mt-1">QUANT & DATA SCIENTIST</span>
+                  <span className="text-[8px] font-mono text-purple-300 mt-1">DATA SCIENTIST & ML</span>
                 </div>
               )}
             </div>

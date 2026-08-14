@@ -20,10 +20,10 @@ export function IntroSection() {
             {/* Status Pill */}
             <div className="inline-flex items-center space-x-2 bg-navy-mid border border-frost-mid/30 text-frost-light px-4 py-1.5 rounded-full text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-status-emerald animate-ping" />
-              <span>Available for Full-Time Roles & Quant Projects</span>
+              <span>Available for Full-Time Roles & Data Projects</span>
             </div>
 
-            {/* Headline Italic Serif (Fio Style) */}
+            {/* Headline Italic Serif */}
             <h2 className="font-display italic text-4xl sm:text-6xl font-extrabold text-text-primary tracking-tight leading-[1.1]">
               Hi, I&apos;m Joshua
             </h2>
@@ -31,20 +31,23 @@ export function IntroSection() {
             {/* Credential Tags */}
             <div className="flex flex-wrap gap-2.5 pt-1">
               <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
-                Quant Developer
+                Data Scientist
               </span>
               <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
-                Data Science & ML
+                ML Engineer
               </span>
               <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
-                IDX Equities Researcher
+                Data Engineer
+              </span>
+              <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
+                AI Engineer
               </span>
             </div>
 
             {/* Description */}
             <p className="text-text-sub text-base sm:text-lg font-body leading-relaxed max-w-2xl pt-2">
-              Quantitative developer & data scientist specializing in systematic equity research, machine learning signal pipelines, 
-              and walk-forward validation engines. Transforming raw tick data into high-integrity statistical edge.
+              Data Scientist & Machine Learning Engineer passionate about building scalable data pipelines, predictive models, 
+              and AI applications that drive actionable business intelligence.
             </p>
 
             {/* CTA Buttons */}
@@ -68,7 +71,7 @@ export function IntroSection() {
 
           </div>
 
-          {/* Right Framed Photo Stage Card (Fio Stage Style) */}
+          {/* Right Framed Photo Stage Card */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative transform rotate-2 hover:rotate-0 transition-transform duration-500 max-w-[340px] w-full">
               {/* Blue Glow Halo Behind Frame */}
@@ -90,7 +93,7 @@ export function IntroSection() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-arctic-abyss via-ocean-deep to-navy-dark text-white">
                       <Sparkles className="w-10 h-10 text-frost-cyan mb-3 animate-spin" />
                       <span className="font-display text-xl font-bold text-white">JOSHUA</span>
-                      <span className="text-xs font-mono text-frost-mid mt-1">QUANT & DATA SCIENTIST</span>
+                      <span className="text-xs font-mono text-frost-mid mt-1">DATA SCIENTIST & ML ENGINEER</span>
                       <span className="text-[10px] font-mono text-text-sub mt-4 italic">
                         Put profile.jpg in public/docs/ to show photo
                       </span>
@@ -100,10 +103,10 @@ export function IntroSection() {
 
                 <div className="text-center px-2 py-1">
                   <div className="font-display font-extrabold text-sm text-text-primary">
-                    Joshua — Quant & ML Engineer
+                    Joshua — Data Scientist & ML Engineer
                   </div>
                   <div className="text-[10px] font-mono text-frost-mid font-semibold mt-0.5">
-                    IDX Equities · Walk-Forward Validation
+                    Data Analytics · Machine Learning · AI Systems
                   </div>
                 </div>
               </div>
