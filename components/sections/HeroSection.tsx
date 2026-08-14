@@ -6,7 +6,7 @@ export function HeroSection() {
       id="home" 
       className="relative w-full min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-12 bg-slate-950 text-white"
     >
-      {/* 1. Subtle Architectural Grid Coordinates Background (Nautical / Chart Grid Spec from DESIGN.md) */}
+      {/* 1. Subtle Architectural Grid Coordinates Background */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.12]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -30,10 +30,10 @@ export function HeroSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col items-center justify-center my-auto">
         
-        {/* Symmetrical Perimeter Chips (Positioned safely far away in lower diagonal corners) */}
+        {/* Organic Asymmetrical Perimeter Chips (Randomized distances & rotations filling space) */}
         <div className="hidden lg:block relative w-full h-0 z-20">
-          {/* Top Left Chip */}
-          <div className="entry entry-d1 absolute -top-24 left-0 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-2 hover:rotate-0 transition-transform">
+          {/* Top Left Chip - Far Top Left Angle */}
+          <div className="entry entry-d1 absolute -top-28 -left-8 bg-slate-900/70 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
             <div className="p-1.5 rounded-lg bg-arctic-blue text-white">
               <Database className="w-4 h-4" />
             </div>
@@ -43,8 +43,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Top Right Chip */}
-          <div className="entry entry-d1 absolute -top-24 right-0 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-2 hover:rotate-0 transition-transform">
+          {/* Top Right Chip - Higher Top Right Angle */}
+          <div className="entry entry-d1 absolute -top-32 right-12 bg-slate-900/70 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-4 hover:rotate-0 transition-transform duration-300">
             <div className="p-1.5 rounded-lg bg-slate-800 text-frost-cyan">
               <BarChart3 className="w-4 h-4" />
             </div>
@@ -54,14 +54,14 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Lower Left Chip (Pulled far out to lower diagonal left, completely clear of title box) */}
-          <div className="entry entry-d2 absolute top-64 -left-12 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform -rotate-3 hover:rotate-0 transition-transform">
+          {/* Lower Left Chip - Outer Left Low Angle */}
+          <div className="entry entry-d2 absolute top-56 -left-20 bg-slate-900/70 backdrop-blur-2xl px-4 py-2 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform -rotate-3 hover:rotate-0 transition-transform duration-300">
             <Code className="w-4 h-4 text-frost-cyan" />
             <span>PyTorch & LightGBM</span>
           </div>
 
-          {/* Lower Right Chip (Pulled far out to lower diagonal right, completely clear of title box) */}
-          <div className="entry entry-d2 absolute top-64 -right-12 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform rotate-3 hover:rotate-0 transition-transform">
+          {/* Lower Right Chip - Outer Lower Right Angle */}
+          <div className="entry entry-d2 absolute top-64 -right-16 bg-slate-900/70 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform rotate-5 hover:rotate-0 transition-transform duration-300">
             <Cpu className="w-4 h-4 text-frost-mid" />
             <span className="font-mono text-xs font-bold text-white">Machine Learning Pipelines</span>
           </div>
