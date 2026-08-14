@@ -13,7 +13,7 @@ const navItems = [
 
 export function HeaderNav() {
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 max-w-4xl mx-auto px-4 pointer-events-none">
+    <header className="fixed top-4 left-0 right-0 z-50 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
       <div className="pointer-events-auto bg-slate-950/85 backdrop-blur-2xl border border-slate-700/60 shadow-[0_10px_30px_rgba(0,0,0,0.8)] rounded-full px-5 h-13 flex items-center justify-between text-white">
         
         {/* Brand Logo */}

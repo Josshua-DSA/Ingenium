@@ -2,8 +2,8 @@ import { Mail, Github } from 'lucide-react'
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 relative z-10">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="contact" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         <div className="glass-card p-10 sm:p-14 rounded-3xl border border-violet/20 shadow-2xl">
           <span className="font-mono text-[11px] uppercase tracking-widest text-violet-light block mb-3 font-semibold">
             LET&apos;S CONNECT

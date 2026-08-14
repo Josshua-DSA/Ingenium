@@ -27,8 +27,8 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 relative z-10">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         <div className="mb-12">
           <span className="font-mono text-xs uppercase tracking-widest text-frost-mid block mb-2 font-semibold">

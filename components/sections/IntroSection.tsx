@@ -9,8 +9,8 @@ export function IntroSection() {
   const [photoError, setPhotoError] = useState(false)
 
   return (
-    <section id="about-intro" className="py-20 relative z-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about-intro" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           

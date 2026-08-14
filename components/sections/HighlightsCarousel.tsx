@@ -49,8 +49,8 @@ export function HighlightsCarousel() {
   const Icon = current.icon
 
   return (
-    <section id="tour" className="py-20 relative z-10">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="tour" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Header (Fio Style Pill Container) */}
         <div className="text-center mb-12">

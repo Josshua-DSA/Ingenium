@@ -8,8 +8,8 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="py-20 relative z-10">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="mb-10 flex items-end justify-between">
           <div>
             <span className="font-mono text-[11px] uppercase tracking-widest text-violet-light block mb-2 font-semibold flex items-center space-x-1.5">
