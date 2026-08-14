@@ -125,14 +125,18 @@ body {
   animation-play-state: paused;
 }
 
-/* Traveling Border Beam Glow (Merembet Top-Right-Bottom-Left) */
-@keyframes borderBeam {
-  0%   { offset-distance: 0%;   }
-  100% { offset-distance: 100%; }
+/* Traveling Orbital Background Spotlight (Orbit 4 Sudut Layar: Top -> Right -> Bottom -> Left -> Top) */
+@keyframes spotlightOrbit {
+  0%   { background-position: 50% -20%; }
+  25%  { background-position: 120% 50%; }
+  50%  { background-position: 50% 120%; }
+  75%  { background-position: -20% 50%; }
+  100% { background-position: 50% -20%; }
 }
 
-.border-beam-path {
-  animation: borderBeam 6s linear infinite;
+.animate-spotlight-orbit {
+  background-size: 140% 140%;
+  animation: spotlightOrbit 16s ease-in-out infinite;
 }
 
 /* Cinematic Entry Animation (Blur-in to Sharp) */

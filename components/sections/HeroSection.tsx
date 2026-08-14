@@ -18,8 +18,8 @@ export function HeroSection() {
         </svg>
       </div>
 
-      {/* 2. Deep Radial Spotlight Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(46,109,173,0.3),rgba(255,255,255,0))]" />
+      {/* 2. Traveling Orbital Background Spotlight (Merambat mengorbit 4 sudut layar: Top -> Right -> Bottom -> Left -> Top) */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_70%_70%_at_var(--tw-gradient-stops),rgba(46,109,173,0.45),rgba(0,229,255,0.15),transparent_70%)] animate-spotlight-orbit" />
 
       {/* 3. Floating Ambient Micro Particles */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -28,8 +28,8 @@ export function HeroSection() {
         <div className="absolute bottom-1/3 left-1/3 w-2 h-2 rounded-full bg-frost-light/50 blur-[1px] animate-ping" style={{ animationDuration: '6s' }} />
       </div>
 
-      {/* CHIPS PLACED AT EXTREME SCREEN EDGES (MENTOK KIRI & MENTOK KANAN SCREEN VIEWPORT) */}
-      <div className="hidden xl:block absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-30 px-8 lg:px-16">
+      {/* PERIMETER CHIPS AT EXTREME SCREEN EDGES (MENTOK KIRI & MENTOK KANAN VIEWPORT) */}
+      <div className="hidden xl:block absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-30 px-6 lg:px-12">
         <div className="w-full flex items-center justify-between">
           
           {/* EXTREME LEFT FLANK CHIPS (MENTOK KIRI SCREEN) */}
@@ -79,15 +79,11 @@ export function HeroSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col items-center justify-center my-auto">
         <div className="w-full flex flex-col items-center text-center">
           
-          {/* ULTRA macOS GLASS CONTAINER WITH TRAVELING NEON BORDER BEAM */}
+          {/* ULTRA macOS GLASS CONTAINER (CLEAN, CALM, SLEEK) */}
           <div className="entry entry-d2 relative w-full mx-auto">
             
-            {/* Traveling Border Glow Beam (Stroke that travels along the box edge: Top -> Right -> Bottom -> Left) */}
-            <div className="absolute -inset-[2px] rounded-[1.6rem] bg-gradient-to-r from-frost-cyan via-arctic-blue to-frost-mid opacity-75 blur-[2px] animate-pulse" />
-            <div className="absolute inset-0 rounded-[1.5rem] bg-slate-950/80 z-0" />
-
-            {/* Glass Box Content */}
-            <div className="relative z-10 bg-slate-950/70 backdrop-blur-3xl border border-white/20 p-8 sm:p-14 rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
+            {/* Clean Glass Box */}
+            <div className="relative bg-slate-900/40 backdrop-blur-3xl border border-white/15 p-8 sm:p-14 rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
               {/* Main Headline Text */}
               <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-normal text-white leading-none select-none text-center drop-shadow-2xl">
                 MY PORTFOLIO
