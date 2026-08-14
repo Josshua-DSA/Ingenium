@@ -125,14 +125,14 @@ body {
   animation-play-state: paused;
 }
 
-/* Orbit Conic Glow Rotation */
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+/* Traveling Border Beam Glow (Merembet Top-Right-Bottom-Left) */
+@keyframes borderBeam {
+  0%   { offset-distance: 0%;   }
+  100% { offset-distance: 100%; }
 }
 
-.animate-spin-slow {
-  animation: spinSlow 12s linear infinite;
+.border-beam-path {
+  animation: borderBeam 6s linear infinite;
 }
 
 /* Cinematic Entry Animation (Blur-in to Sharp) */

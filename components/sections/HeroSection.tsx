@@ -28,56 +28,66 @@ export function HeroSection() {
         <div className="absolute bottom-1/3 left-1/3 w-2 h-2 rounded-full bg-frost-light/50 blur-[1px] animate-ping" style={{ animationDuration: '6s' }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col items-center justify-center my-auto">
-        
-        {/* Perimeter Chips Distributed Far to the Left and Right Flanks */}
-        <div className="hidden lg:block absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-20">
-          {/* Far Outer Left Flank - Top Chip */}
-          <div className="entry entry-d1 absolute -top-32 left-4 pointer-events-auto bg-slate-900/80 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
-            <div className="p-1.5 rounded-lg bg-arctic-blue text-white">
-              <Database className="w-4 h-4" />
+      {/* CHIPS PLACED AT EXTREME SCREEN EDGES (MENTOK KIRI & MENTOK KANAN SCREEN VIEWPORT) */}
+      <div className="hidden xl:block absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-30 px-8 lg:px-16">
+        <div className="w-full flex items-center justify-between">
+          
+          {/* EXTREME LEFT FLANK CHIPS (MENTOK KIRI SCREEN) */}
+          <div className="flex flex-col space-y-36 pointer-events-auto">
+            {/* Top Left Mentok Kiri */}
+            <div className="entry entry-d1 bg-slate-900/80 backdrop-blur-2xl px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div className="p-1.5 rounded-lg bg-arctic-blue text-white">
+                <Database className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-[9px] font-mono uppercase text-slate-400 font-semibold">DATA ENGINEERING</div>
+                <div className="text-xs font-mono font-bold text-white">ETL & SQL Pipelines</div>
+              </div>
             </div>
-            <div>
-              <div className="text-[9px] font-mono uppercase text-slate-400 font-semibold">DATA ENGINEERING</div>
-              <div className="text-xs font-mono font-bold text-white">ETL & SQL Pipelines</div>
+
+            {/* Bottom Left Mentok Kiri */}
+            <div className="entry entry-d2 bg-slate-900/80 backdrop-blur-2xl px-4.5 py-2.5 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <Code className="w-4 h-4 text-frost-cyan" />
+              <span>PyTorch & LightGBM</span>
             </div>
           </div>
 
-          {/* Far Outer Left Flank - Bottom Chip */}
-          <div className="entry entry-d2 absolute top-24 left-8 pointer-events-auto bg-slate-900/80 backdrop-blur-2xl px-4 py-2 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform rotate-3 hover:rotate-0 transition-transform duration-300">
-            <Code className="w-4 h-4 text-frost-cyan" />
-            <span>PyTorch & LightGBM</span>
+          {/* EXTREME RIGHT FLANK CHIPS (MENTOK KANAN SCREEN) */}
+          <div className="flex flex-col space-y-36 pointer-events-auto">
+            {/* Top Right Mentok Kanan */}
+            <div className="entry entry-d1 bg-slate-900/80 backdrop-blur-2xl px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div className="p-1.5 rounded-lg bg-slate-800 text-frost-cyan">
+                <BarChart3 className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-[9px] font-mono uppercase font-bold text-slate-400">DATA SCIENCE</div>
+                <div className="text-xs font-mono font-extrabold text-frost-cyan">Predictive Analytics ↗</div>
+              </div>
+            </div>
+
+            {/* Bottom Right Mentok Kanan */}
+            <div className="entry entry-d2 bg-slate-900/80 backdrop-blur-2xl px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform -rotate-4 hover:rotate-0 transition-transform duration-300">
+              <Cpu className="w-4 h-4 text-frost-mid" />
+              <span className="font-mono text-xs font-bold text-white">Machine Learning Pipelines</span>
+            </div>
           </div>
 
-          {/* Far Outer Right Flank - Top Chip */}
-          <div className="entry entry-d1 absolute -top-36 right-4 pointer-events-auto bg-slate-900/80 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-6 hover:rotate-0 transition-transform duration-300">
-            <div className="p-1.5 rounded-lg bg-slate-800 text-frost-cyan">
-              <BarChart3 className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-[9px] font-mono uppercase font-bold text-slate-400">DATA SCIENCE</div>
-              <div className="text-xs font-mono font-extrabold text-frost-cyan">Predictive Analytics ↗</div>
-            </div>
-          </div>
-
-          {/* Far Outer Right Flank - Bottom Chip */}
-          <div className="entry entry-d2 absolute top-28 right-8 pointer-events-auto bg-slate-900/80 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform -rotate-4 hover:rotate-0 transition-transform duration-300">
-            <Cpu className="w-4 h-4 text-frost-mid" />
-            <span className="font-mono text-xs font-bold text-white">Machine Learning Pipelines</span>
-          </div>
         </div>
+      </div>
 
-        {/* Hero Central Content */}
+      {/* Hero Central Content */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col items-center justify-center my-auto">
         <div className="w-full flex flex-col items-center text-center">
           
-          {/* ORBITING NEON GLOW HALO & ULTRA macOS GLASS CONTAINER */}
-          <div className="entry entry-d2 relative w-full max-w-4xl mx-auto group">
+          {/* ULTRA macOS GLASS CONTAINER WITH TRAVELING NEON BORDER BEAM */}
+          <div className="entry entry-d2 relative w-full mx-auto">
             
-            {/* 360 Degree Orbiting Neon Gradient Halo (Continuous Revolving Light) */}
-            <div className="absolute -inset-3 rounded-[2rem] bg-[conic-gradient(from_0deg,rgba(0,229,255,0.4),rgba(46,109,173,0.8),rgba(168,212,240,0.2),rgba(0,229,255,0.4))] blur-xl opacity-80 animate-spin-slow pointer-events-none" />
+            {/* Traveling Border Glow Beam (Stroke that travels along the box edge: Top -> Right -> Bottom -> Left) */}
+            <div className="absolute -inset-[2px] rounded-[1.6rem] bg-gradient-to-r from-frost-cyan via-arctic-blue to-frost-mid opacity-75 blur-[2px] animate-pulse" />
+            <div className="absolute inset-0 rounded-[1.5rem] bg-slate-950/80 z-0" />
 
-            {/* Glass Box Container */}
-            <div className="relative bg-slate-950/70 backdrop-blur-3xl border border-white/20 p-8 sm:p-14 rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
+            {/* Glass Box Content */}
+            <div className="relative z-10 bg-slate-950/70 backdrop-blur-3xl border border-white/20 p-8 sm:p-14 rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
               {/* Main Headline Text */}
               <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-normal text-white leading-none select-none text-center drop-shadow-2xl">
                 MY PORTFOLIO
@@ -87,11 +97,10 @@ export function HeroSection() {
           </div>
 
         </div>
-
       </div>
 
       {/* Bottom Footer Row: Center Presented By + Bottom Right Scroll Indicator */}
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 flex items-center justify-between pt-6">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-20 flex items-center justify-between pt-6">
         
         {/* Empty Left Buffer for Symmetry */}
         <div className="w-24 hidden sm:block" />
