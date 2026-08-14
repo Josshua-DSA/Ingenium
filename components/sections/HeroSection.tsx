@@ -6,15 +6,34 @@ export function HeroSection() {
       id="home" 
       className="relative w-full min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-12 bg-slate-950 text-white"
     >
-      {/* Deep Radial Spotlight Glow Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(46,109,173,0.25),rgba(255,255,255,0))]" />
+      {/* 1. Subtle Architectural Grid Coordinates Background (Nautical / Chart Grid Spec from DESIGN.md) */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.12]">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(168, 212, 240, 0.4)" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-grid)" />
+        </svg>
+      </div>
+
+      {/* 2. Deep Radial Spotlight & Breathing Aura */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(46,109,173,0.3),rgba(255,255,255,0))] animate-pulse" style={{ animationDuration: '6s' }} />
+
+      {/* 3. Floating Ambient Micro Particles */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/5 w-2 h-2 rounded-full bg-frost-cyan/60 blur-[1px] animate-ping" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 rounded-full bg-arctic-blue/80 blur-[1px] animate-ping" style={{ animationDuration: '5s' }} />
+        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 rounded-full bg-frost-light/50 blur-[1px] animate-ping" style={{ animationDuration: '6s' }} />
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col items-center justify-center my-auto">
         
-        {/* Symmetrical Perimeter Chips with Cinematic Entry Stagger */}
+        {/* Symmetrical Perimeter Chips (Positioned safely far away in lower diagonal corners) */}
         <div className="hidden lg:block relative w-full h-0 z-20">
           {/* Top Left Chip */}
-          <div className="entry entry-d1 absolute -top-20 left-0 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-2 hover:rotate-0 transition-transform">
+          <div className="entry entry-d1 absolute -top-24 left-0 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-2 hover:rotate-0 transition-transform">
             <div className="p-1.5 rounded-lg bg-arctic-blue text-white">
               <Database className="w-4 h-4" />
             </div>
@@ -25,7 +44,7 @@ export function HeroSection() {
           </div>
 
           {/* Top Right Chip */}
-          <div className="entry entry-d1 absolute -top-20 right-0 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-2 hover:rotate-0 transition-transform">
+          <div className="entry entry-d1 absolute -top-24 right-0 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-2 hover:rotate-0 transition-transform">
             <div className="p-1.5 rounded-lg bg-slate-800 text-frost-cyan">
               <BarChart3 className="w-4 h-4" />
             </div>
@@ -35,14 +54,14 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Lower Left Chip */}
-          <div className="entry entry-d2 absolute top-52 -left-6 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform -rotate-1 hover:rotate-0 transition-transform">
+          {/* Lower Left Chip (Pulled far out to lower diagonal left, completely clear of title box) */}
+          <div className="entry entry-d2 absolute top-64 -left-12 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform -rotate-3 hover:rotate-0 transition-transform">
             <Code className="w-4 h-4 text-frost-cyan" />
             <span>PyTorch & LightGBM</span>
           </div>
 
-          {/* Lower Right Chip */}
-          <div className="entry entry-d2 absolute top-52 -right-6 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform rotate-1 hover:rotate-0 transition-transform">
+          {/* Lower Right Chip (Pulled far out to lower diagonal right, completely clear of title box) */}
+          <div className="entry entry-d2 absolute top-64 -right-12 bg-slate-900/60 backdrop-blur-2xl px-4 py-2 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform rotate-3 hover:rotate-0 transition-transform">
             <Cpu className="w-4 h-4 text-frost-mid" />
             <span className="font-mono text-xs font-bold text-white">Machine Learning Pipelines</span>
           </div>
@@ -51,7 +70,7 @@ export function HeroSection() {
         {/* Hero Central Content */}
         <div className="w-full flex flex-col items-center text-center space-y-10">
           
-          {/* ULTRA macOS GLASS CONTAINER (SUPER TRANSPARENT, NO CORNER HANDLES) */}
+          {/* ULTRA macOS GLASS CONTAINER (NO CORNER HANDLES, ULTRA TRANSPARENT) */}
           <div className="entry entry-d2 w-full max-w-4xl mx-auto bg-white/[0.03] backdrop-blur-3xl border border-white/15 p-8 sm:p-12 rounded-3xl relative shadow-[0_30px_90px_rgba(0,0,0,0.7)] transition-all duration-300">
             
             {/* Main Headline Text */}
