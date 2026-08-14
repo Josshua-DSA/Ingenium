@@ -124,3 +124,19 @@ body {
 .animate-marquee-slow:hover {
   animation-play-state: paused;
 }
+
+/* Cinematic Entry Animation (Blur-in to Sharp) */
+@keyframes fadeUpFrost {
+  0%   { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+  55%  { opacity: 1; transform: translateY(0);    filter: blur(3px);  }
+  100% { opacity: 1; transform: translateY(0);    filter: blur(0);    }
+}
+
+.entry {
+  animation: fadeUpFrost 0.85s cubic-bezier(.22,1,.36,1) both;
+}
+.entry-d1 { animation-delay: 0ms;   }
+.entry-d2 { animation-delay: 150ms; }
+.entry-d3 { animation-delay: 300ms; }
+.entry-d4 { animation-delay: 450ms; }
+

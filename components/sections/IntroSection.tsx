@@ -4,13 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { ArrowRight, Download, Sparkles } from 'lucide-react'
+import { DotMatrixWave } from '@/components/ui/DotMatrixWave'
 
 export function IntroSection() {
   const [photoError, setPhotoError] = useState(false)
 
   return (
-    <section id="about-intro" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="about-intro" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10 overflow-hidden">
+      {/* 3D Dot-Matrix Particle Wave Background (Moved to Section 2) */}
+      <DotMatrixWave />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
@@ -18,7 +22,7 @@ export function IntroSection() {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Status Pill */}
-            <div className="inline-flex items-center space-x-2 bg-navy-mid border border-frost-mid/30 text-frost-light px-4 py-1.5 rounded-full text-xs font-mono">
+            <div className="inline-flex items-center space-x-2 bg-slate-900/80 backdrop-blur-xl border border-white/10 text-frost-light px-4 py-1.5 rounded-full text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-status-emerald animate-ping" />
               <span>Available for Full-Time Roles & Data Projects</span>
             </div>
@@ -30,16 +34,16 @@ export function IntroSection() {
 
             {/* Credential Tags */}
             <div className="flex flex-wrap gap-2.5 pt-1">
-              <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
+              <span className="bg-slate-900/80 backdrop-blur-xl border border-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
                 Data Scientist
               </span>
-              <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
+              <span className="bg-slate-900/80 backdrop-blur-xl border border-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
                 ML Engineer
               </span>
-              <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
+              <span className="bg-slate-900/80 backdrop-blur-xl border border-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
                 Data Engineer
               </span>
-              <span className="bg-navy-mid/80 border border-frost-mid/30 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
+              <span className="bg-slate-900/80 backdrop-blur-xl border border-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
                 AI Engineer
               </span>
             </div>
@@ -62,7 +66,7 @@ export function IntroSection() {
               
               <a
                 href="mailto:contact@example.com"
-                className="inline-flex items-center space-x-2 glass-card-arctic text-text-primary hover:text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md"
+                className="inline-flex items-center space-x-2 bg-slate-900/80 backdrop-blur-xl border border-white/10 text-text-primary hover:text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md"
               >
                 <Download className="w-4 h-4 text-frost-light" />
                 <span>Download CV</span>
@@ -77,7 +81,7 @@ export function IntroSection() {
               {/* Blue Glow Halo Behind Frame */}
               <div className="absolute -inset-4 bg-gradient-to-r from-frost-cyan/30 via-arctic-blue/30 to-frost-mid/30 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-              <div className="glass-card-arctic p-4 rounded-3xl relative z-10 border-2 border-frost-mid/40 shadow-2xl">
+              <div className="bg-slate-900/60 backdrop-blur-2xl p-4 rounded-3xl relative z-10 border border-white/15 shadow-2xl">
                 <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-ocean-deep mb-3 border border-navy-mid">
                   {!photoError ? (
                     <Image
