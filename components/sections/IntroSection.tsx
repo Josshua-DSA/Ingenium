@@ -12,11 +12,8 @@ export function IntroSection() {
   return (
     <section 
       id="about-intro" 
-      className="w-full min-h-screen flex items-center justify-center py-24 relative z-10 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-slate-100 border-t border-frost-mid/20"
+      className="w-full min-h-screen flex items-center justify-center py-24 relative z-10 overflow-hidden bg-slate-950 text-slate-100 border-t border-white/5"
     >
-      {/* Frost Shimmer Horizon Divider Line at Boundary */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-frost-cyan/50 to-transparent pointer-events-none z-20" />
-
       {/* 3D Dot-Matrix Particle Wave Background */}
       <DotMatrixWave />
 

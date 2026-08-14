@@ -125,6 +125,16 @@ body {
   animation-play-state: paused;
 }
 
+/* Orbit Conic Glow Rotation */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
 /* Cinematic Entry Animation (Blur-in to Sharp) */
 @keyframes fadeUpFrost {
   0%   { opacity: 0; transform: translateY(20px); filter: blur(10px); }
