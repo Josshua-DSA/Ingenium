@@ -1,4 +1,5 @@
 import { getAllProjects } from '@/lib/projects'
+import { HeaderNav } from '@/components/sections/HeaderNav'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { IntroSection } from '@/components/sections/IntroSection'
 import { MarqueeTicker } from '@/components/ui/MarqueeTicker'
@@ -15,6 +16,9 @@ export default async function HomePage() {
 
   return (
     <main className="flex-1">
+      {/* Top Floating Glass Navigation Bar */}
+      <HeaderNav />
+
       {/* 1. My Portfolio (Figma Selection Frame + 3D Hanging Lanyard) */}
       <HeroSection />
 
