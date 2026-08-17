@@ -13,46 +13,57 @@ export function DotMatrixWave() {
     if (!ctx) return
 
     let animationFrameId: number
-    let count = 0
+    let time = 0
+    let mouseX = -1000
+    let mouseY = -1000
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect()
+      mouseX = e.clientX - rect.left
+      mouseY = e.clientY - rect.top
+    }
 
     const resize = () => {
       canvas.width = canvas.parentElement?.clientWidth || window.innerWidth
-      canvas.height = canvas.parentElement?.clientHeight || 450
+      canvas.height = canvas.parentElement?.clientHeight || 600
     }
 
     resize()
     window.addEventListener('resize', resize)
+    window.addEventListener('mousemove', handleMouseMove)
 
-    const SEPARATION = 35
-    const AMOUNT_X = 45
-    const AMOUNT_Y = 25
+    const SPACING = 36
+    const cols = Math.ceil(canvas.width / SPACING) + 2
+    const rows = Math.ceil(canvas.height / SPACING) + 2
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+      time += 0.02
 
-      count += 0.04
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          const x = i * SPACING
+          const y = j * SPACING
 
-      const startX = (canvas.width - AMOUNT_X * SEPARATION) / 2
-      const startY = (canvas.height - AMOUNT_Y * SEPARATION) / 2 + 50
+          // Distance to mouse cursor
+          const dx = x - mouseX
+          const dy = y - mouseY
+          const dist = Math.sqrt(dx * dx + dy * dy)
+          const mouseEffect = Math.max(0, 1 - dist / 220)
 
-      for (let ix = 0; ix < AMOUNT_X; ix++) {
-        for (let iy = 0; iy < AMOUNT_Y; iy++) {
-          const x = startX + ix * SEPARATION
-          const y = startY + iy * SEPARATION + Math.sin((ix + count) * 0.3) * 15 + Math.sin((iy + count) * 0.5) * 15
+          // Breathing opacity offset (starfield breathing effect)
+          const phaseOffset = (i * 0.4 + j * 0.6)
+          const breatheOpacity = 0.12 + Math.sin(time * 1.5 + phaseOffset) * 0.08 + mouseEffect * 0.35
 
-          const size = (Math.sin((ix + count) * 0.3) + 1) * 1.8 + (Math.sin((iy + count) * 0.5) + 1) * 1.5
+          // Size pulse
+          const baseSize = 1.6 + Math.cos(time * 1.2 + phaseOffset) * 0.6
+          const finalSize = baseSize + mouseEffect * 2.2
 
           ctx.beginPath()
-          ctx.arc(x, y, Math.max(0.8, size), 0, Math.PI * 2, false)
+          ctx.arc(x, y, Math.max(0.6, finalSize), 0, Math.PI * 2, false)
 
-          // Color gradient from cyan (#00f2fe) to violet (#7c2596)
-          const ratio = ix / AMOUNT_X
-          if (ratio < 0.5) {
-            ctx.fillStyle = `rgba(0, 242, 254, ${0.25 + ratio * 0.4})`
-          } else {
-            ctx.fillStyle = `rgba(124, 37, 150, ${0.3 + (1 - ratio) * 0.4})`
-          }
-
+          // Arctic Frost Blue Gradient fill
+          ctx.fillStyle = `rgba(46, 109, 173, ${Math.min(0.7, Math.max(0.05, breatheOpacity))})`
           ctx.fill()
         }
       }
@@ -64,6 +75,7 @@ export function DotMatrixWave() {
 
     return () => {
       window.removeEventListener('resize', resize)
+      window.removeEventListener('mousemove', handleMouseMove)
       cancelAnimationFrame(animationFrameId)
     }
   }, [])
@@ -71,7 +83,7 @@ export function DotMatrixWave() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-70"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-80"
     />
   )
 }
