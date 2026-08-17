@@ -32,13 +32,13 @@ export function DotMatrixWave() {
     window.addEventListener('resize', resize)
     window.addEventListener('mousemove', handleMouseMove)
 
-    const SPACING = 36
+    const SPACING = 34
     const cols = Math.ceil(canvas.width / SPACING) + 2
     const rows = Math.ceil(canvas.height / SPACING) + 2
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      time += 0.02
+      time += 0.025
 
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
@@ -49,21 +49,27 @@ export function DotMatrixWave() {
           const dx = x - mouseX
           const dy = y - mouseY
           const dist = Math.sqrt(dx * dx + dy * dy)
-          const mouseEffect = Math.max(0, 1 - dist / 220)
+          const mouseEffect = Math.max(0, 1 - dist / 240)
 
-          // Breathing opacity offset (starfield breathing effect)
-          const phaseOffset = (i * 0.4 + j * 0.6)
-          const breatheOpacity = 0.12 + Math.sin(time * 1.5 + phaseOffset) * 0.08 + mouseEffect * 0.35
-
-          // Size pulse
-          const baseSize = 1.6 + Math.cos(time * 1.2 + phaseOffset) * 0.6
-          const finalSize = baseSize + mouseEffect * 2.2
+          // High contrast breathing opacity & size
+          const phaseOffset = i * 0.4 + j * 0.6
+          const breatheOpacity = 0.28 + Math.sin(time * 1.8 + phaseOffset) * 0.18 + mouseEffect * 0.45
+          const baseSize = 2.2 + Math.cos(time * 1.5 + phaseOffset) * 0.8
+          const finalSize = baseSize + mouseEffect * 2.8
 
           ctx.beginPath()
-          ctx.arc(x, y, Math.max(0.6, finalSize), 0, Math.PI * 2, false)
+          ctx.arc(x, y, Math.max(1.0, finalSize), 0, Math.PI * 2, false)
 
-          // Arctic Frost Blue Gradient fill
-          ctx.fillStyle = `rgba(46, 109, 173, ${Math.min(0.7, Math.max(0.05, breatheOpacity))})`
+          // High Contrast Dual-Tone Color Mapping (Cyan Glow on Mouse, Deep Blue Ambient)
+          const opacity = Math.min(0.85, Math.max(0.15, breatheOpacity))
+          if (mouseEffect > 0.1) {
+            // Bright Vibrant Cyan when mouse is near
+            ctx.fillStyle = `rgba(0, 150, 199, ${opacity})`
+          } else {
+            // High contrast Arctic Deep Blue
+            ctx.fillStyle = `rgba(26, 90, 150, ${opacity})`
+          }
+
           ctx.fill()
         }
       }
@@ -83,7 +89,7 @@ export function DotMatrixWave() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-80"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-100"
     />
   )
 }
