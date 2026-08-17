@@ -2,39 +2,36 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './lib/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
         arctic: {
-          abyss: '#0A0F1E',
-          blue: '#2E6DAD',
-          mist: '#EAF4FB',
+          blue:    'var(--arctic-blue)',
+          mid:     'var(--arctic-mid)',
+          bright:  'var(--arctic-bright)',
+          light:   'var(--arctic-light)',
+          pale:    'var(--arctic-pale)',
         },
-        ocean: {
-          deep: '#0D1B2E',
-        },
-        navy: {
-          dark: '#112240',
-          mid: '#1A3354',
-        },
-        frost: {
-          mid: '#5BA4CF',
-          light: '#A8D4F0',
-          pale: '#D4EBF9',
-          cyan: '#00F2FE',
+        text: {
+          primary:   'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          muted:     'var(--text-muted)',
+          faint:     'var(--text-faint)',
         },
         status: {
-          emerald: '#34D399',
+          active:   'var(--status-active)',
+          wip:      'var(--status-wip)',
+          archived: 'var(--status-archived)',
         },
       },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        accent:  ['var(--font-accent)', 'Georgia', 'serif'],
+        mono:    ['var(--font-mono)', 'monospace'],
       },
     },
   },

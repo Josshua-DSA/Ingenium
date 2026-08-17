@@ -2,30 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Arctic Ocean Blue System (DESIGN.md Spec) ─────────── */
+/* ── Arctic Frost Design System (DESIGN.md Spec) ──────────────────── */
 :root {
-  /* Arctic Dark Tones */
-  --arctic-abyss:   #0A0F1E;   /* darkest bg — hero, layout */
-  --ocean-deep:     #0D1B2E;   /* section bg dark primary */
-  --navy-dark:      #112240;   /* section bg dark secondary */
-  --navy-mid:       #1A3354;   /* borders on dark, elevated surfaces */
+  /* Background — Arctic light layers */
+  --bg-base:        #E8F4FB;   /* base canvas — light arctic blue */
+  --bg-grad-1:      #B8DDF5;   /* radial gradient top-left */
+  --bg-grad-2:      #C5E4F8;   /* radial gradient bottom-right */
+  --bg-grad-3:      #D6EEFA;   /* radial gradient center */
 
-  /* Arctic Blue Accents */
-  --arctic-blue:    #2E6DAD;   /* primary accent — buttons, links */
-  --frost-mid:      #5BA4CF;   /* secondary accent — hover, badge */
-  --frost-light:    #A8D4F0;   /* subtle highlight, focus states */
-  --frost-cyan:     #00F2FE;   /* glowing highlights */
-  --status-emerald: #34D399;   /* active status */
+  /* Surface (elemen non-glass) */
+  --surface-card:   rgba(255, 255, 255, 0.50);
+  --surface-raised: rgba(255, 255, 255, 0.65);
 
-  /* Text Colors */
-  --text-primary:   #EAF4FB;
-  --text-sub:       #7B9AB5;
-  --text-muted:     #3D5770;
+  /* Glass tokens — Apple/macOS material system */
+  --glass-nav:      rgba(255, 255, 255, 0.60);
+  --glass-hero:     rgba(255, 255, 255, 0.50);
+  --glass-card:     rgba(255, 255, 255, 0.45);
+  --glass-subtle:   rgba(255, 255, 255, 0.30);
 
-  /* Glassmorphism Specs (Apple/macOS material) */
-  --glass-bg:       rgba(13, 27, 46, 0.65);
-  --glass-border-t: rgba(91, 164, 207, 0.30);
-  --glass-border-b: rgba(26, 51, 84, 0.50);
+  /* Glass borders — top always brighter */
+  --glass-border-top:   rgba(255, 255, 255, 0.95);
+  --glass-border-side:  rgba(255, 255, 255, 0.75);
+  --glass-border-inner: rgba(255, 255, 255, 0.80);
+
+  /* Arctic Blue accent */
+  --arctic-blue:    #2E6DAD;   /* primary accent */
+  --arctic-mid:     #1A5A96;   /* links, interactive */
+  --arctic-bright:  #5BA4CF;   /* hover, focus */
+  --arctic-light:   #A8D4F0;   /* subtle tint */
+  --arctic-pale:    #D6EEFA;   /* very subtle bg tint */
+
+  /* Text */
+  --text-primary:   #071020;   /* headings on light bg */
+  --text-secondary: #2E5A8A;   /* body, descriptions */
+  --text-muted:     #6B90B0;   /* captions, nav links */
+  --text-faint:     #8AAEC8;   /* timestamps, meta */
+
+  /* Semantic */
+  --status-active:   #059669;   /* green — active project */
+  --status-wip:      #D97706;   /* amber — in progress */
+  --status-archived: #6B90B0;   /* muted — archived */
+
+  /* Shadows (subtle, blue-toned) */
+  --shadow-card: 0 4px 24px rgba(46, 109, 173, 0.10);
+  --shadow-nav:  0 2px 20px rgba(46, 109, 173, 0.08);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.90);
 }
 
 html {
@@ -33,9 +54,12 @@ html {
 }
 
 body {
-  background-color: var(--arctic-abyss);
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 10%, var(--bg-grad-1) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 45% at 85% 85%, var(--bg-grad-2) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg-grad-3) 0%, transparent 65%),
+    var(--bg-base);
   color: var(--text-primary);
-  font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
@@ -46,119 +70,7 @@ body {
   color: #ffffff;
 }
 
-/* Figma Selection Box Style (Arctic Theme) */
-.figma-selection-box {
-  border: 1.5px dashed rgba(91, 164, 207, 0.45);
-  background: rgba(13, 27, 46, 0.65);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  box-shadow: 
-    0 30px 60px -15px rgba(0, 0, 0, 0.8),
-    inset 0px 1px 0px 0px rgba(168, 212, 240, 0.3);
-}
-
-.figma-handle {
-  width: 9px;
-  height: 9px;
-  background: #ffffff;
-  border: 1.5px solid #5BA4CF;
-  border-radius: 2px;
-  position: absolute;
-}
-
-/* Glass Cards Apple Style */
-.glass-card-arctic {
-  background: rgba(13, 27, 46, 0.55);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 24px;
-  border: 1px solid rgba(26, 51, 84, 0.6);
-  border-top: 1px solid rgba(91, 164, 207, 0.25);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-card-arctic:hover {
-  background: rgba(26, 51, 84, 0.65);
-  border-color: rgba(91, 164, 207, 0.5);
-  border-top-color: rgba(168, 212, 240, 0.6);
-  box-shadow: 
-    0 30px 60px -20px rgba(0, 0, 0, 0.9),
-    0 0 30px 4px rgba(91, 164, 207, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Navbar Adaptive Glass */
-.glass-nav-arctic {
-  background: rgba(10, 15, 30, 0.80);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(26, 51, 84, 0.6);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Skill Pill Tag */
-.skill-pill-arctic {
-  background: rgba(17, 34, 64, 0.70);
-  border: 1px solid rgba(91, 164, 207, 0.20);
-  color: var(--text-primary);
-  transition: all 0.2s ease;
-}
-
-.skill-pill-arctic:hover {
-  background: rgba(46, 109, 173, 0.35);
-  border-color: rgba(91, 164, 207, 0.50);
-  color: #ffffff;
-}
-
-/* Marquee Animations */
-@keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee-slow {
-  animation: marquee-left 35s linear infinite;
-}
-
-.animate-marquee-slow:hover {
-  animation-play-state: paused;
-}
-
-/* Physical Traveling Orbital Light Beam (Orbiting 4 Corners: Top -> Right -> Bottom -> Left -> Top) */
-@keyframes orbitFourCorners {
-  0% {
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  25% {
-    top: 50%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-  }
-  50% {
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  75% {
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.animate-orbital-glow {
-  animation: orbitFourCorners 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/* Cinematic Entry Animation (Blur-in to Sharp) */
+/* Entry Animation: fadeUpFrost */
 @keyframes fadeUpFrost {
   0%   { opacity: 0; transform: translateY(20px); filter: blur(10px); }
   55%  { opacity: 1; transform: translateY(0);    filter: blur(3px);  }
@@ -166,10 +78,30 @@ body {
 }
 
 .entry {
-  animation: fadeUpFrost 0.85s cubic-bezier(.22,1,.36,1) both;
+  animation: fadeUpFrost 0.85s cubic-bezier(.22, 1, .36, 1) both;
 }
 .entry-d1 { animation-delay: 0ms;   }
 .entry-d2 { animation-delay: 150ms; }
 .entry-d3 { animation-delay: 300ms; }
 .entry-d4 { animation-delay: 450ms; }
 
+/* Physical Traveling Orbital Light Beam */
+@keyframes orbitFourCorners {
+  0%   { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+  25%  { top: 50%; left: 88%; transform: translate(-50%, -50%); }
+  50%  { top: 88%; left: 50%; transform: translate(-50%, -50%); }
+  75%  { top: 50%; left: 12%; transform: translate(-50%, -50%); }
+  100% { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+}
+
+.animate-orbital-glow {
+  animation: orbitFourCorners 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
