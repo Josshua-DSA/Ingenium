@@ -5,71 +5,48 @@ export function HeroSection() {
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-12 bg-slate-950 text-white"
+      className="relative w-full min-h-screen flex flex-col justify-between items-center overflow-hidden pt-32 pb-12 text-text-primary"
     >
-      {/* 1. Physical 4-Corner Traveling Orbital Spotlight */}
+      {/* Physical 4-Corner Traveling Orbital Spotlight */}
       <OrbitalSpotlight />
 
-      {/* 2. Subtle Architectural Grid Coordinates Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15]">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(168, 212, 240, 0.4)" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-grid)" />
-        </svg>
-      </div>
-
-      {/* 3. Floating Ambient Micro Particles */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/5 w-2 h-2 rounded-full bg-frost-cyan/60 blur-[1px] animate-ping" style={{ animationDuration: '4s' }} />
-        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 rounded-full bg-arctic-blue/80 blur-[1px] animate-ping" style={{ animationDuration: '5s' }} />
-        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 rounded-full bg-frost-light/50 blur-[1px] animate-ping" style={{ animationDuration: '6s' }} />
-      </div>
-
-      {/* PERIMETER CHIPS AT EXTREME SCREEN EDGES (MENTOK KIRI & MENTOK KANAN VIEWPORT) */}
+      {/* PERIMETER CHIPS AT EXTREME VIEWPORT BOUNDARIES (MENTOK KIRI & MENTOK KANAN SCREEN) */}
       <div className="hidden xl:block absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-30 px-6 lg:px-12">
         <div className="w-full flex items-center justify-between">
           
-          {/* EXTREME LEFT FLANK CHIPS (MENTOK KIRI SCREEN) */}
+          {/* EXTREME LEFT FLANK CHIPS */}
           <div className="flex flex-col space-y-36 pointer-events-auto">
-            {/* Top Left Mentok Kiri */}
-            <div className="entry entry-d1 bg-slate-900/80 backdrop-blur-2xl px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+            <div className="entry entry-d1 backdrop-blur-[12px] backdrop-saturate-[160%] bg-white/40 border border-white/80 border-t-white/95 px-4 py-2.5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.10)] flex items-center space-x-3 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
               <div className="p-1.5 rounded-lg bg-arctic-blue text-white">
                 <Database className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-[9px] font-mono uppercase text-slate-400 font-semibold">DATA ENGINEERING</div>
-                <div className="text-xs font-mono font-bold text-white">ETL & SQL Pipelines</div>
+                <div className="text-[9px] font-mono uppercase text-text-muted font-semibold">DATA ENGINEERING</div>
+                <div className="text-xs font-mono font-bold text-text-primary">ETL & SQL Pipelines</div>
               </div>
             </div>
 
-            {/* Bottom Left Mentok Kiri */}
-            <div className="entry entry-d2 bg-slate-900/80 backdrop-blur-2xl px-4.5 py-2.5 rounded-full shadow-2xl border border-white/10 flex items-center space-x-2.5 font-mono text-xs font-bold text-frost-cyan transform rotate-3 hover:rotate-0 transition-transform duration-300">
-              <Code className="w-4 h-4 text-frost-cyan" />
+            <div className="entry entry-d2 backdrop-blur-[12px] backdrop-saturate-[160%] bg-white/40 border border-white/80 border-t-white/95 px-4.5 py-2.5 rounded-full shadow-[0_4px_20px_rgba(46,109,173,0.10)] flex items-center space-x-2.5 font-mono text-xs font-bold text-arctic-blue transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <Code className="w-4 h-4 text-arctic-blue" />
               <span>PyTorch & LightGBM</span>
             </div>
           </div>
 
-          {/* EXTREME RIGHT FLANK CHIPS (MENTOK KANAN SCREEN) */}
+          {/* EXTREME RIGHT FLANK CHIPS */}
           <div className="flex flex-col space-y-36 pointer-events-auto">
-            {/* Top Right Mentok Kanan */}
-            <div className="entry entry-d1 bg-slate-900/80 backdrop-blur-2xl px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-3 transform rotate-6 hover:rotate-0 transition-transform duration-300">
-              <div className="p-1.5 rounded-lg bg-slate-800 text-frost-cyan">
+            <div className="entry entry-d1 backdrop-blur-[12px] backdrop-saturate-[160%] bg-white/40 border border-white/80 border-t-white/95 px-4 py-2.5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.10)] flex items-center space-x-3 transform rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div className="p-1.5 rounded-lg bg-arctic-bright text-white">
                 <BarChart3 className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-[9px] font-mono uppercase font-bold text-slate-400">DATA SCIENCE</div>
-                <div className="text-xs font-mono font-extrabold text-frost-cyan">Predictive Analytics ↗</div>
+                <div className="text-[9px] font-mono uppercase font-bold text-text-muted">DATA SCIENCE</div>
+                <div className="text-xs font-mono font-extrabold text-arctic-blue">Predictive Analytics ↗</div>
               </div>
             </div>
 
-            {/* Bottom Right Mentok Kanan */}
-            <div className="entry entry-d2 bg-slate-900/80 backdrop-blur-2xl px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex items-center space-x-2.5 transform -rotate-4 hover:rotate-0 transition-transform duration-300">
-              <Cpu className="w-4 h-4 text-frost-mid" />
-              <span className="font-mono text-xs font-bold text-white">Machine Learning Pipelines</span>
+            <div className="entry entry-d2 backdrop-blur-[12px] backdrop-saturate-[160%] bg-white/40 border border-white/80 border-t-white/95 px-4 py-2.5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.10)] flex items-center space-x-2.5 transform -rotate-4 hover:rotate-0 transition-transform duration-300">
+              <Cpu className="w-4 h-4 text-arctic-blue" />
+              <span className="font-mono text-xs font-bold text-text-primary">Machine Learning Pipelines</span>
             </div>
           </div>
 
@@ -80,16 +57,31 @@ export function HeroSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col items-center justify-center my-auto">
         <div className="w-full flex flex-col items-center text-center">
           
-          {/* ULTRA macOS GLASS CONTAINER (CLEAN, CALM, SLEEK) */}
-          <div className="entry entry-d2 relative w-full mx-auto">
+          {/* ARCTIC FROST HERO CARD (DESIGN.md Layer 2 Glass) */}
+          <div className="entry entry-d2 relative w-full mx-auto backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.50)] border border-white/75 border-t-white/95 rounded-3xl p-8 sm:p-14 shadow-[0_4px_24px_rgba(46,109,173,0.10),inset_0_1px_0_rgba(255,255,255,0.85)]">
             
-            {/* Clean Glass Box */}
-            <div className="relative bg-slate-900/40 backdrop-blur-3xl border border-white/15 p-8 sm:p-14 rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
-              {/* Main Headline Text */}
-              <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-normal text-white leading-none select-none text-center drop-shadow-2xl">
-                MY PORTFOLIO
-              </h1>
-            </div>
+            {/* Nautical Depth Grid 40x40px */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none"
+              style={{
+                backgroundImage: `
+                  linear-gradient(rgba(46,109,173,0.04) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(46,109,173,0.04) 1px, transparent 1px)
+                `,
+                backgroundSize: '40px 40px',
+              }}
+            />
+
+            {/* Main Headline Text */}
+            <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-text-primary leading-none select-none text-center relative z-10">
+              MY PORTFOLIO
+            </h1>
+
+            {/* Signature Tagline (DM Serif Display Italic - Single Editorial Moment) */}
+            <p className="font-accent italic text-lg sm:text-xl text-text-secondary mt-6 relative z-10 max-w-xl mx-auto">
+              I build engines that turn complex data into structured intelligence.
+            </p>
 
           </div>
 
@@ -104,17 +96,17 @@ export function HeroSection() {
 
         {/* Center: Presented by Joshua Remedial Syeba */}
         <div className="entry entry-d4 mx-auto">
-          <div className="inline-flex items-center space-x-2.5 bg-slate-900/90 backdrop-blur-2xl border border-white/10 px-6 py-2.5 rounded-full shadow-2xl text-xs sm:text-sm font-mono text-slate-200">
+          <div className="inline-flex items-center space-x-2.5 backdrop-blur-[12px] bg-white/60 border border-white/80 border-t-white/95 px-6 py-2.5 rounded-full shadow-[0_2px_12px_rgba(46,109,173,0.08)] text-xs sm:text-sm font-mono text-text-secondary">
             <span>Presented by</span>
-            <strong className="font-bold text-frost-cyan">Joshua Remedial Syeba</strong>
+            <strong className="font-bold text-arctic-blue">Joshua Remedial Syeba</strong>
           </div>
         </div>
 
         {/* Bottom Right Corner: Scroll to Explore + Arrow Bounce Icon */}
-        <div className="entry entry-d4 flex items-center space-x-2 text-slate-400 font-mono text-[11px] uppercase tracking-widest bg-slate-900/80 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full shadow-lg">
+        <div className="entry entry-d4 flex items-center space-x-2 text-text-muted font-mono text-[11px] uppercase tracking-widest backdrop-blur-[12px] bg-white/60 border border-white/80 border-t-white/95 px-4 py-2 rounded-full shadow-[0_2px_12px_rgba(46,109,173,0.08)]">
           <span>Scroll to explore</span>
-          <div className="w-4 h-4 rounded-full border border-frost-cyan flex items-center justify-center">
-            <span className="text-frost-cyan text-[10px] animate-bounce">↓</span>
+          <div className="w-4 h-4 rounded-full border border-arctic-blue flex items-center justify-center">
+            <span className="text-arctic-blue text-[10px] animate-bounce">↓</span>
           </div>
         </div>
 
