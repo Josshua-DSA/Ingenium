@@ -1,22 +1,23 @@
-import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
+import { Montserrat, DM_Serif_Display, JetBrains_Mono } from 'next/font/google'
 
-export const syne = Syne({
+export const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['700', '800'],
+  weight: ['400', '700', '800'],
   display: 'swap',
 })
 
-export const jakarta = Plus_Jakarta_Sans({
+export const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin'],
-  variable: '--font-body',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-accent',
+  weight: ['400'],
+  style: ['italic'],
   display: 'swap',
 })
 
 export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500'],
   display: 'swap',
 })
