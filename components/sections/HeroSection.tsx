@@ -88,25 +88,14 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom Footer Row: Center Presented By + Bottom Right Scroll Indicator */}
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-20 flex items-center justify-between pt-6">
+      {/* Bottom Footer Row: Centered Presented By */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-20 flex items-center justify-center pt-6">
         
-        {/* Empty Left Buffer for Symmetry */}
-        <div className="w-24 hidden sm:block" />
-
         {/* Center: Presented by Joshua Remedial Syeba */}
         <div className="entry entry-d4 mx-auto">
           <div className="inline-flex items-center space-x-2.5 backdrop-blur-[12px] bg-white/60 border border-white/80 border-t-white/95 px-6 py-2.5 rounded-full shadow-[0_2px_12px_rgba(46,109,173,0.08)] text-xs sm:text-sm font-mono text-text-secondary">
             <span>Presented by</span>
             <strong className="font-bold text-arctic-blue">Joshua Remedial Syeba</strong>
-          </div>
-        </div>
-
-        {/* Bottom Right Corner: Scroll to Explore + Arrow Bounce Icon */}
-        <div className="entry entry-d4 flex items-center space-x-2 text-text-muted font-mono text-[11px] uppercase tracking-widest backdrop-blur-[12px] bg-white/60 border border-white/80 border-t-white/95 px-4 py-2 rounded-full shadow-[0_2px_12px_rgba(46,109,173,0.08)]">
-          <span>Scroll to explore</span>
-          <div className="w-4 h-4 rounded-full border border-arctic-blue flex items-center justify-center">
-            <span className="text-arctic-blue text-[10px] animate-bounce">↓</span>
           </div>
         </div>
 
