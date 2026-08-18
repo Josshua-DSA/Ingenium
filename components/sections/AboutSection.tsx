@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Code2, ShieldCheck, MapPin, CheckCircle2, Cpu, LineChart, BookOpen, Layers } from 'lucide-react'
+import { Cpu, Database, Award, Code2, MapPin, CheckCircle2 } from 'lucide-react'
 
 export function AboutSection() {
   return (
@@ -13,133 +13,69 @@ export function AboutSection() {
           <h2 className="font-accent italic text-3xl sm:text-5xl text-text-primary tracking-tight">
             The person behind the data.
           </h2>
-          <p className="text-slate-700 text-base sm:text-lg mt-3 font-display max-w-xl font-medium">
-            Turning curiosity into scalable data-driven solutions.
-          </p>
         </div>
 
-        {/* Fio-style 2-Column Split Layout */}
+        {/* 2-Column Layout: 4 Stat Cards (Left) + 2 Q&A Blocks (Right) */}
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           
-          {/* LEFT COLUMN: 8 Stat & Competency Cards (2x4 Grid) */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* LEFT: 4 Specific Stat Cards (2x2 Grid) */}
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
             
-            {/* Card 1: Specialization */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
-                <GraduationCap className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">SPECIALIZATION</span>
-              </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">Data Science</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">Predictive Analytics & Modeling</div>
-            </div>
-
-            {/* Card 2: ML Engineering */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-emerald-600 mb-2">
-                <Cpu className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-emerald-700 tracking-wider">ENGINEERING</span>
-              </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">ML Pipelines</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">PyTorch · LightGBM · Scikit-Learn</div>
-            </div>
-
-            {/* Card 3: Data Engineering */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
-                <Layers className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">INFRASTRUCTURE</span>
-              </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">ETL & SQL</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">SQLite · PostgreSQL · Docker</div>
-            </div>
-
-            {/* Card 4: Projects */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
+            {/* Card 1: Solidus-Folium — unique flagship project */}
+            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex items-center space-x-2 text-arctic-blue mb-3">
                 <Award className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">FEATURED</span>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider">FLAGSHIP</span>
               </div>
               <div className="text-lg font-display font-extrabold text-slate-900">Solidus-Folium</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">6-Layer Architecture CLI Engine</div>
+              <div className="text-xs font-mono text-slate-700 mt-1.5 font-medium leading-relaxed">6-layer quantitative research engine for IDX equities with walk-forward validation.</div>
             </div>
 
-            {/* Card 5: Core Tech Stack */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
+            {/* Card 2: ML Pipeline Architecture — concrete skill */}
+            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex items-center space-x-2 text-emerald-600 mb-3">
+                <Cpu className="w-4 h-4" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700">ML PIPELINE</span>
+              </div>
+              <div className="text-lg font-display font-extrabold text-slate-900">PyTorch + LightGBM</div>
+              <div className="text-xs font-mono text-slate-700 mt-1.5 font-medium leading-relaxed">End-to-end training pipelines with purged cross-validation and triple barrier labeling.</div>
+            </div>
+
+            {/* Card 3: Data Infrastructure — concrete stack */}
+            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex items-center space-x-2 text-arctic-blue mb-3">
+                <Database className="w-4 h-4" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider">DATA INFRA</span>
+              </div>
+              <div className="text-lg font-display font-extrabold text-slate-900">SQL + Docker</div>
+              <div className="text-xs font-mono text-slate-700 mt-1.5 font-medium leading-relaxed">SQLite & PostgreSQL datastores, containerized ETL pipelines, CLI-first tooling.</div>
+            </div>
+
+            {/* Card 4: Web Engineering — concrete output */}
+            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex items-center space-x-2 text-arctic-blue mb-3">
                 <Code2 className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">CORE TECH</span>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider">WEB + VIZ</span>
               </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">Python & SQL</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">Pandas · NumPy · TypeScript</div>
-            </div>
-
-            {/* Card 6: Methodology */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
-                <ShieldCheck className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">METHODOLOGY</span>
-              </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">Rigorous CV</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">Data Validation · Zero Leakage</div>
-            </div>
-
-            {/* Card 7: Analytics */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
-                <LineChart className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">ANALYTICS</span>
-              </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">Data Analytics</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">Exploratory & Feature Engineering</div>
-            </div>
-
-            {/* Card 8: Growth */}
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-5 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
-              <div className="flex items-center space-x-2 text-arctic-blue mb-2">
-                <BookOpen className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase text-arctic-blue tracking-wider">GROWTH</span>
-              </div>
-              <div className="text-lg font-display font-extrabold text-slate-900">Continuous</div>
-              <div className="text-xs font-mono text-slate-700 mt-1 font-medium">Production Architecture & ML</div>
+              <div className="text-lg font-display font-extrabold text-slate-900">Next.js + Python</div>
+              <div className="text-xs font-mono text-slate-700 mt-1.5 font-medium leading-relaxed">Full-stack portfolio, data dashboards, and interactive visual interfaces.</div>
             </div>
 
           </div>
 
-          {/* RIGHT COLUMN: 4 Narrative Q&A Blocks (Fio-style Stack) */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-7 rounded-3xl space-y-6 shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
+          {/* RIGHT: 2 Compact Q&A Blocks + Status Bar */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-8 rounded-3xl space-y-6 shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
               
               <div>
                 <div className="flex items-center space-x-2 mb-2">
                   <span className="h-0.5 w-4 bg-arctic-blue rounded-full" />
-                  <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold">WHO I AM</span>
+                  <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold">WHO I AM & WHAT DRIVES ME</span>
                 </div>
-                <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
-                  I am a Data Scientist and Machine Learning Engineer focused on predictive analytics, data pipelines, and AI systems. 
-                  I build end-to-end research models and engineering pipelines with high reproducibility and statistical discipline.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="h-0.5 w-4 bg-arctic-blue rounded-full" />
-                  <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold">WHAT MOTIVATES ME</span>
-                </div>
-                <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
-                  I am driven by bridging the gap between raw data and actionable decision-making. 
-                  Extracting meaningful patterns from complex datasets requires technical rigor and clear structural architecture.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="h-0.5 w-4 bg-arctic-blue rounded-full" />
-                  <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold">WHAT I ENJOY BUILDING</span>
-                </div>
-                <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
-                  Production-grade data pipelines, predictive ML classification models, computer vision classifiers, 
-                  and web applications that translate complex quantitative outputs into clear visual interfaces.
+                <p className="text-slate-800 text-sm leading-[1.8] font-display font-medium">
+                  Data Scientist and ML Engineer who builds end-to-end research pipelines — from raw data ingestion to model deployment. 
+                  I care about reproducibility, zero data leakage, and systems that produce trustworthy predictions under real-world conditions. 
+                  My work on Solidus-Folium taught me that the gap between a working notebook and a production engine is where most value gets lost.
                 </p>
               </div>
 
@@ -148,9 +84,10 @@ export function AboutSection() {
                   <span className="h-0.5 w-4 bg-arctic-blue rounded-full" />
                   <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold">WHERE I&apos;M HEADING</span>
                 </div>
-                <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
-                  Targeting Data Science, Machine Learning Engineering, Data Engineering, or AI Engineering roles where software quality, 
-                  analytical discipline, and collaborative problem-solving deliver measurable business impact.
+                <p className="text-slate-800 text-sm leading-[1.8] font-display font-medium">
+                  Looking for Data Science, ML Engineering, or Data Engineering roles where I can apply quantitative rigor 
+                  to real business problems. I want to work on teams that value clean architecture, measurable outcomes, 
+                  and honest evaluation over inflated metrics.
                 </p>
               </div>
 
@@ -160,7 +97,7 @@ export function AboutSection() {
             <div className="backdrop-blur-[20px] bg-white/80 border border-white/90 border-t-white p-4 rounded-2xl flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-700 shadow-sm">
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-arctic-blue" />
-                <span className="font-bold text-slate-900">Indonesia · Open to Remote & Onsite Roles</span>
+                <span className="font-bold text-slate-900">Indonesia · Open to Remote & Onsite</span>
               </div>
               <div className="flex items-center space-x-2 text-emerald-800 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full font-bold">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
