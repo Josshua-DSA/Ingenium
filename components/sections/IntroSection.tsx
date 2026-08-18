@@ -24,9 +24,9 @@ export function IntroSection() {
           {/* Left Narrative Text */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Status Pill Tag */}
-            <div className="inline-flex items-center space-x-2 backdrop-blur-[12px] bg-white/60 border border-emerald-500/30 text-emerald-800 px-4 py-1.5 rounded-full text-xs font-mono shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            {/* Status Pill Tag (Arctic Blue) */}
+            <div className="inline-flex items-center space-x-2 backdrop-blur-[12px] bg-arctic-blue/10 border border-arctic-blue/30 text-arctic-blue px-4 py-1.5 rounded-full text-xs font-mono shadow-sm font-semibold">
+              <span className="w-2 h-2 rounded-full bg-arctic-blue animate-pulse" />
               <span>Available for Full-Time Roles & Data Projects</span>
             </div>
 
