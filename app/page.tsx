@@ -4,12 +4,10 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { IntroSection } from '@/components/sections/IntroSection'
 import { MarqueeTicker } from '@/components/ui/MarqueeTicker'
 import { AboutSection } from '@/components/sections/AboutSection'
-import { HighlightsCarousel } from '@/components/sections/HighlightsCarousel'
-import { SkillsSection } from '@/components/sections/SkillsSection'
+import { JourneyTimeline } from '@/components/sections/JourneyTimeline'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
-import { ContactSection } from '@/components/sections/ContactSection'
-import { OpportunitiesSection } from '@/components/sections/OpportunitiesSection'
+import { ClosingSection } from '@/components/sections/ClosingSection'
 
 export default async function HomePage() {
   const projects = await getAllProjects()
@@ -19,35 +17,29 @@ export default async function HomePage() {
       {/* Top Floating Glass Navigation Bar */}
       <HeaderNav />
 
-      {/* 1. My Portfolio (Figma Selection Frame + 3D Hanging Lanyard) */}
+      {/* 1. Hero — MY PORTFOLIO */}
       <HeroSection />
 
       {/* Ticker Divider */}
       <MarqueeTicker />
 
-      {/* 2. Hi, I'm Joshua (Intro Narrative + Stage Photo Frame + View Work & Download CV) */}
+      {/* 2. Intro — Hi, I'm Joshua */}
       <IntroSection />
 
-      {/* 3. About Me (Q&A Grid & Status Pillars) */}
+      {/* 3. About Me — 4 Stat Cards + 2 Q&A */}
       <AboutSection />
 
-      {/* 4. 3D Tour / Highlights (Milestones & Achievements + AUTO TOUR Button) */}
-      <HighlightsCarousel />
+      {/* 4. Journey — Interactive Timeline */}
+      <JourneyTimeline />
 
-      {/* 5. Tech Skills (Categorized Skill Pills) */}
-      <SkillsSection />
-
-      {/* 6. Projects (Case Studies) */}
+      {/* 5. Projects & Case Studies (with integrated skill tags) */}
       <ProjectsSection projects={projects} />
 
-      {/* 7. Experience & Activities */}
+      {/* 6. Experience & Activities */}
       <ExperienceSection />
 
-      {/* 8. Contact */}
-      <ContactSection />
-
-      {/* 9. Open to Opportunities Banner */}
-      <OpportunitiesSection />
+      {/* 7. Contact & CTA (merged closing) */}
+      <ClosingSection />
     </main>
   )
 }
