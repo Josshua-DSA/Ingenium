@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { ArrowRight, Download, Sparkles } from 'lucide-react'
-import { DotMatrixWave } from '@/components/ui/DotMatrixWave'
 
 export function IntroSection() {
   const [photoError, setPhotoError] = useState(false)
@@ -14,9 +13,6 @@ export function IntroSection() {
       id="about-intro" 
       className="w-full min-h-screen flex items-center justify-center py-24 relative z-10 overflow-hidden text-text-primary"
     >
-      {/* Interactive 60fps Starfield Breathing Dot-Matrix Background */}
-      <DotMatrixWave />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-12 items-center">
