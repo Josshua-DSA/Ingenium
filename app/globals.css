@@ -49,16 +49,53 @@
   --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.90);
 }
 
+/* CSS Dynamic Property Definitions for Gradient Drift */
+@property --x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 20%;
+}
+@property --y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 25%;
+}
+@property --x2 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 75%;
+}
+@property --y2 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 65%;
+}
+
+@keyframes gradientDrift {
+  0%   { --x: 20%; --y: 25%; --x2: 75%; --y2: 65%; }
+  25%  { --x: 65%; --y: 15%; --x2: 20%; --y2: 80%; }
+  50%  { --x: 80%; --y: 55%; --x2: 35%; --y2: 20%; }
+  75%  { --x: 30%; --y: 75%; --x2: 70%; --y2: 30%; }
+  100% { --x: 50%; --y: 40%; --x2: 15%; --y2: 55%; }
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background:
-    radial-gradient(ellipse 70% 50% at 15% 10%, var(--bg-grad-1) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 45% at 85% 85%, var(--bg-grad-2) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg-grad-3) 0%, transparent 65%),
-    var(--bg-base);
+    radial-gradient(ellipse 55% 55% at var(--x) var(--y),
+      rgba(91, 164, 207, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at var(--x2) var(--y2),
+      rgba(168, 212, 240, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 15% 10%,
+      #B8DDF5 0%, transparent 55%),
+    radial-gradient(ellipse 60% 45% at 85% 85%,
+      #C5E4F8 0%, transparent 50%),
+    #E8F4FB;
+
+  animation: gradientDrift 12s ease-in-out infinite alternate;
   color: var(--text-primary);
   min-height: 100vh;
   margin: 0;
@@ -103,5 +140,8 @@ body {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+  body {
+    animation: none;
   }
 }
