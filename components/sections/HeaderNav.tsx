@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import { Home, User, Sparkles, Code, FolderGit2, Briefcase, Mail } from 'lucide-react'
+import { Home, User, Sparkles, FolderGit2, Briefcase, Mail } from 'lucide-react'
 
 const navItems = [
   { href: '#home', label: 'Home', icon: Home },
-  { href: '#about-intro', label: 'About', icon: User },
-  { href: '#tour', label: '3D Tour', icon: Sparkles },
-  { href: '#skills', label: 'Skills', icon: Code },
+  { href: '#about', label: 'About', icon: User },
+  { href: '#journey', label: 'Journey', icon: Sparkles },
   { href: '#projects', label: 'Projects', icon: FolderGit2 },
   { href: '#experience', label: 'Experience', icon: Briefcase },
   { href: '#contact', label: 'Contact', icon: Mail },
