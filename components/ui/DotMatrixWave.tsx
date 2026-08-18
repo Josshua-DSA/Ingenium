@@ -32,13 +32,13 @@ export function DotMatrixWave() {
     window.addEventListener('resize', resize)
     window.addEventListener('mousemove', handleMouseMove)
 
-    const SPACING = 34
+    const SPACING = 38
     const cols = Math.ceil(canvas.width / SPACING) + 2
     const rows = Math.ceil(canvas.height / SPACING) + 2
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      time += 0.025
+      time += 0.035
 
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
@@ -49,25 +49,28 @@ export function DotMatrixWave() {
           const dx = x - mouseX
           const dy = y - mouseY
           const dist = Math.sqrt(dx * dx + dy * dy)
-          const mouseEffect = Math.max(0, 1 - dist / 240)
+          const mouseEffect = Math.max(0, 1 - dist / 280)
 
-          // High contrast breathing opacity & size
-          const phaseOffset = i * 0.4 + j * 0.6
-          const breatheOpacity = 0.28 + Math.sin(time * 1.8 + phaseOffset) * 0.18 + mouseEffect * 0.45
-          const baseSize = 2.2 + Math.cos(time * 1.5 + phaseOffset) * 0.8
-          const finalSize = baseSize + mouseEffect * 2.8
+          // High visibility breathing motion
+          const phaseOffset = i * 0.45 + j * 0.55
+          const breatheOpacity = 0.45 + Math.sin(time * 2.2 + phaseOffset) * 0.30 + mouseEffect * 0.25
+          const baseSize = 2.8 + Math.cos(time * 2.0 + phaseOffset) * 1.2
+          const finalSize = baseSize + mouseEffect * 3.5
 
           ctx.beginPath()
-          ctx.arc(x, y, Math.max(1.0, finalSize), 0, Math.PI * 2, false)
+          ctx.arc(x, y, Math.max(1.2, finalSize), 0, Math.PI * 2, false)
 
-          // High Contrast Dual-Tone Color Mapping (Cyan Glow on Mouse, Deep Blue Ambient)
-          const opacity = Math.min(0.85, Math.max(0.15, breatheOpacity))
-          if (mouseEffect > 0.1) {
-            // Bright Vibrant Cyan when mouse is near
-            ctx.fillStyle = `rgba(0, 150, 199, ${opacity})`
+          // High-contrast color palette: Deep Navy (#0A2540) to Glowing Electric Cyan (#00E5FF)
+          const alpha = Math.min(0.95, Math.max(0.20, breatheOpacity))
+          
+          if (mouseEffect > 0.05) {
+            ctx.fillStyle = `rgba(0, 229, 255, ${alpha})`
+            ctx.shadowColor = 'rgba(0, 229, 255, 0.8)'
+            ctx.shadowBlur = 8
           } else {
-            // High contrast Arctic Deep Blue
-            ctx.fillStyle = `rgba(26, 90, 150, ${opacity})`
+            ctx.fillStyle = `rgba(10, 37, 64, ${alpha})`
+            ctx.shadowColor = 'transparent'
+            ctx.shadowBlur = 0
           }
 
           ctx.fill()
