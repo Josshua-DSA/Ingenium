@@ -2,97 +2,110 @@ import { GraduationCap, Award, Code2, ShieldCheck, MapPin, CheckCircle2 } from '
 
 export function AboutSection() {
   return (
-    <section id="about" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10">
+    <section id="about" className="w-full min-h-screen flex items-center justify-center py-24 relative z-10 text-text-primary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        <div className="mb-10">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-violet-light block mb-2 font-semibold">
+        {/* Section Header */}
+        <div className="mb-12">
+          <span className="font-mono text-xs uppercase tracking-widest text-arctic-blue block mb-2 font-bold">
             ABOUT ME
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
+          <h2 className="font-accent italic text-3xl sm:text-5xl text-text-primary tracking-tight">
             The person behind the data.
           </h2>
-          <p className="text-slate-400 text-lg mt-2 font-body">
-            Turning curiosity into data-driven solutions.
+          <p className="text-slate-700 text-base sm:text-lg mt-3 font-display max-w-xl font-medium">
+            Turning curiosity into scalable data-driven solutions.
           </p>
         </div>
 
-        {/* Fio-style 4x2 Stat Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
-          <div className="glass-card p-5 rounded-2xl">
-            <GraduationCap className="w-5 h-5 text-violet-light mb-2" />
-            <div className="text-xl font-bold text-white font-mono">Quant & ML</div>
-            <div className="text-xs font-semibold text-slate-300 mt-1">Specialization</div>
-            <div className="text-[11px] text-slate-500 mt-2 font-mono">IDX Equities · Signal Generation · Portfolio Optimization</div>
+        {/* 4 Pillar Stat Cards (Apple Light Glass with Dark Contrast Text) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+          
+          <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-6 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-arctic-blue/10 flex items-center justify-center text-arctic-blue mb-4">
+              <GraduationCap className="w-5 h-5" />
+            </div>
+            <div className="text-xl font-display font-extrabold text-slate-900">Data & ML</div>
+            <div className="text-xs font-mono font-bold text-arctic-blue mt-1">Specialization</div>
+            <div className="text-xs font-mono text-slate-700 mt-2.5 leading-relaxed font-semibold">Predictive Analytics · Model Training · AI Engineering</div>
           </div>
 
-          <div className="glass-card p-5 rounded-2xl">
-            <Award className="w-5 h-5 text-emerald mb-2" />
-            <div className="text-xl font-bold text-white font-mono">Solidus-Folium</div>
-            <div className="text-xs font-semibold text-slate-300 mt-1">Featured Engine</div>
-            <div className="text-[11px] text-slate-500 mt-2 font-mono">6-Layer Architecture · SQLite · Walk-Forward</div>
+          <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-6 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 mb-4">
+              <Award className="w-5 h-5" />
+            </div>
+            <div className="text-xl font-display font-extrabold text-slate-900">Solidus-Folium</div>
+            <div className="text-xs font-mono font-bold text-emerald-700 mt-1">Featured Engine</div>
+            <div className="text-xs font-mono text-slate-700 mt-2.5 leading-relaxed font-semibold">6-Layer Architecture · SQLite · Walk-Forward</div>
           </div>
 
-          <div className="glass-card p-5 rounded-2xl">
-            <Code2 className="w-5 h-5 text-cyan mb-2" />
-            <div className="text-xl font-bold text-white font-mono">Python & SQL</div>
-            <div className="text-xs font-semibold text-slate-300 mt-1">Core Tech Stack</div>
-            <div className="text-[11px] text-slate-500 mt-2 font-mono">PyTorch · LightGBM · Pandas · Next.js · Docker</div>
+          <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-6 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-arctic-bright/10 flex items-center justify-center text-arctic-blue mb-4">
+              <Code2 className="w-5 h-5" />
+            </div>
+            <div className="text-xl font-display font-extrabold text-slate-900">Python & SQL</div>
+            <div className="text-xs font-mono font-bold text-arctic-blue mt-1">Core Tech Stack</div>
+            <div className="text-xs font-mono text-slate-700 mt-2.5 leading-relaxed font-semibold">PyTorch · LightGBM · Pandas · Next.js · Docker</div>
           </div>
 
-          <div className="glass-card p-5 rounded-2xl">
-            <ShieldCheck className="w-5 h-5 text-violet-light mb-2" />
-            <div className="text-xl font-bold text-white font-mono">Rigorous</div>
-            <div className="text-xs font-semibold text-slate-300 mt-1">Methodology</div>
-            <div className="text-[11px] text-slate-500 mt-2 font-mono">Purged CV · Triple Barrier · Zero Leakage</div>
+          <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-6 rounded-2xl shadow-[0_4px_20px_rgba(46,109,173,0.08)] hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-arctic-blue/10 flex items-center justify-center text-arctic-blue mb-4">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div className="text-xl font-display font-extrabold text-slate-900">Rigorous</div>
+            <div className="text-xs font-mono font-bold text-arctic-blue mt-1">Methodology</div>
+            <div className="text-xs font-mono text-slate-700 mt-2.5 leading-relaxed font-semibold">Cross-Validation · Data Validation · Zero Leakage</div>
           </div>
+
         </div>
 
-        {/* Fio-style Narrative Q&A Grid */}
-        <div className="grid lg:grid-cols-2 gap-6">
-          <div className="glass-card p-7 rounded-3xl space-y-5">
+        {/* Narrative Q&A Cards (Deep Slate High Contrast Text #0F172A / #334155) */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-8">
+          
+          <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-8 rounded-3xl space-y-6 shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
             <div>
-              <span className="font-mono text-[11px] uppercase text-violet-light tracking-wider font-semibold block mb-1">WHO I AM</span>
-              <p className="text-slate-300 text-sm leading-relaxed font-body">
-                I am a Quantitative Developer and Data Scientist focused on quantitative trading systems and financial machine learning. 
-                I build end-to-end research pipelines that eliminate survivorship bias and data leakage.
+              <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold block mb-2">WHO I AM</span>
+              <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
+                I am a Data Scientist and Machine Learning Engineer focused on predictive analytics, data pipelines, and AI systems. 
+                I build end-to-end research models and engineering pipelines with high reproducibility and statistical discipline.
               </p>
             </div>
             <div>
-              <span className="font-mono text-[11px] uppercase text-violet-light tracking-wider font-semibold block mb-1">WHAT MOTIVATES ME</span>
-              <p className="text-slate-300 text-sm leading-relaxed font-body">
-                I am driven by bridging the gap between complex raw market tick data and reproducible algorithmic decision-making. 
-                Finding statistical edge in noisy financial datasets requires structural discipline.
+              <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold block mb-2">WHAT MOTIVATES ME</span>
+              <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
+                I am driven by bridging the gap between raw data and actionable decision-making. 
+                Extracting meaningful patterns from complex datasets requires technical rigor and clear structural architecture.
               </p>
             </div>
           </div>
 
-          <div className="glass-card p-7 rounded-3xl space-y-5">
+          <div className="backdrop-blur-[20px] backdrop-saturate-[180%] bg-[rgba(255,255,255,0.75)] border border-white/90 border-t-white p-8 rounded-3xl space-y-6 shadow-[0_4px_20px_rgba(46,109,173,0.08)]">
             <div>
-              <span className="font-mono text-[11px] uppercase text-violet-light tracking-wider font-semibold block mb-1">WHAT I ENJOY BUILDING</span>
-              <p className="text-slate-300 text-sm leading-relaxed font-body">
-                Production-grade CLI engines (Solidus-Folium), walk-forward validation suites, computer vision classification models, 
-                and local-first datastores that operate with high performance.
+              <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-extrabold block mb-2">WHAT I ENJOY BUILDING</span>
+              <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
+                Production-grade data pipelines, predictive ML classification models, computer vision classifiers, 
+                and web applications that translate complex quantitative outputs into clear visual interfaces.
               </p>
             </div>
             <div>
-              <span className="font-mono text-[11px] uppercase text-violet-light tracking-wider font-semibold block mb-1">WHERE I&apos;M HEADING</span>
-              <p className="text-slate-300 text-sm leading-relaxed font-body">
-                Targeting Quantitative Research, Data Science, or ML Engineering roles where technical rigor, clean software architecture, 
-                and clear communication meet real-world industry impact.
+              <span className="font-mono text-xs uppercase text-arctic-blue tracking-wider font-bold block mb-2">WHERE I&apos;M HEADING</span>
+              <p className="text-slate-800 text-sm leading-[1.75] font-display font-medium">
+                Targeting Data Science, Machine Learning Engineering, Data Engineering, or AI Engineering roles where software quality, 
+                analytical discipline, and collaborative problem-solving deliver measurable business impact.
               </p>
             </div>
           </div>
+
         </div>
 
-        {/* Status Bar */}
-        <div className="mt-6 glass-card p-4 rounded-2xl flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400">
-          <div className="flex items-center space-x-2">
-            <MapPin className="w-3.5 h-3.5 text-violet-light" />
-            <span>Indonesia · Open to Remote & Onsite Roles</span>
+        {/* Bottom Status Bar */}
+        <div className="backdrop-blur-[20px] bg-white/80 border border-white/90 border-t-white p-5 rounded-2xl flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-700 shadow-sm">
+          <div className="flex items-center space-x-2.5">
+            <MapPin className="w-4 h-4 text-arctic-blue" />
+            <span className="font-bold text-slate-900">Indonesia · Open to Remote & Onsite Roles</span>
           </div>
-          <div className="flex items-center space-x-2 text-emerald">
-            <CheckCircle2 className="w-3.5 h-3.5" />
+          <div className="flex items-center space-x-2 text-emerald-800 bg-emerald-50 border border-emerald-300 px-3.5 py-1.5 rounded-full font-bold">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             <span>Available for Full-time Roles & Projects</span>
           </div>
         </div>
